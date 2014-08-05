@@ -1,0 +1,66 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\nodejs\\node.exe',
+1 verbose cli   'c:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'grunt-contrib-les',
+1 verbose cli   '--save-dev' ]
+2 info using npm@1.3.14
+3 info using node@v0.10.22
+4 verbose cache add [ 'grunt-contrib-les', null ]
+5 verbose cache add name=undefined spec="grunt-contrib-les" args=["grunt-contrib-les",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'grunt-contrib-les',
+6 verbose parsed url   path: 'grunt-contrib-les',
+6 verbose parsed url   href: 'grunt-contrib-les' }
+7 silly lockFile 8bf85eea-grunt-contrib-les grunt-contrib-les
+8 verbose lock grunt-contrib-les C:\Users\Andy\AppData\Roaming\npm-cache\8bf85eea-grunt-contrib-les.lock
+9 silly lockFile 8bf85eea-grunt-contrib-les grunt-contrib-les
+10 silly lockFile 8bf85eea-grunt-contrib-les grunt-contrib-les
+11 verbose addNamed [ 'grunt-contrib-les', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 47744509-grunt-contrib-les grunt-contrib-les@
+14 verbose lock grunt-contrib-les@ C:\Users\Andy\AppData\Roaming\npm-cache\47744509-grunt-contrib-les.lock
+15 silly addNameRange { name: 'grunt-contrib-les', range: '*', hasData: false }
+16 verbose url raw grunt-contrib-les
+17 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-les' ]
+18 verbose url resolved https://registry.npmjs.org/grunt-contrib-les
+19 info trying registry request attempt 1 at 13:47:19
+20 http GET https://registry.npmjs.org/grunt-contrib-les
+21 http 404 https://registry.npmjs.org/grunt-contrib-les
+22 silly registry.get cb [ 404,
+22 silly registry.get   { date: 'Tue, 05 Aug 2014 17:47:19 GMT',
+22 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     'cache-control': 'max-age=0',
+22 silly registry.get     'content-length': '52',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     age: '0',
+22 silly registry.get     'x-served-by': 'cache-iad2133-IAD',
+22 silly registry.get     'x-cache': 'MISS',
+22 silly registry.get     'x-cache-hits': '0',
+22 silly registry.get     'x-timer': 'S1407260839.441079,VS0,VE86',
+22 silly registry.get     'keep-alive': 'timeout=10, max=50',
+22 silly registry.get     connection: 'Keep-Alive' } ]
+23 silly lockFile 47744509-grunt-contrib-les grunt-contrib-les@
+24 silly lockFile 47744509-grunt-contrib-les grunt-contrib-les@
+25 error 404 'grunt-contrib-les' is not in the npm registry.
+25 error 404 You should bug the author to publish it
+25 error 404
+25 error 404 Note that you can also install from a
+25 error 404 tarball, folder, or http url, or git url.
+26 error System Windows_NT 6.1.7601
+27 error command "c:\\nodejs\\node.exe" "c:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "grunt-contrib-les" "--save-dev"
+28 error cwd c:\xampp\htdocs\illumina
+29 error node -v v0.10.22
+30 error npm -v 1.3.14
+31 error code E404
+32 verbose exit [ 1, true ]
