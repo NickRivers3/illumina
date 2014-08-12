@@ -23,11 +23,11 @@ regions[page_bottom]    = 'Page bottom'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
-stylesheets[all][] = bootstrap/css/bootstrap.css
-stylesheets[all][] = css/style.css
+stylesheets[all][] = libraries/bootstrap/css/bootstrap.css
+stylesheets[all][] = css/global.css
 
 ;;;;;;;;;;;;;;;;;;;;;;
 ;; Scripts
 ;;;;;;;;;;;;;;;;;;;;;;
 
-scripts[] = js/script.js
+scripts[] = js/script.min.js

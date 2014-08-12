@@ -1,0 +1,80 @@
+/*
+ * grid
+*/
+
+
+/* Five Columns */
+.col-xs-20, 
+.col-sm-20, 
+.col-md-20,
+.col-lg-20  {
+	float:left;
+	width:20%;
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+/*
+ Media Queries
+ ===================================================================================================
+*/
+
+/* 
+ Mobile 
+ max-width: 767px;
+*/
+@media (max-width: 767px) {
+
+}
+
+/* 
+ Tablet Portrait
+ min-width: 768px; and max-width: 991px;
+*/
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* 
+ Tablet Landscape / Medium Desktop
+ min-width: 992px; and max-width: 1199px;
+*/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* 
+ Large Desktop
+ min-width: 1200px;
+*/
+@media (min-width: 1200px) {
+
+}
+
+/* 
+ Super Large Desktop
+ min-width: 1400px;
+*/
+@media (min-width: 1400px) {
+	.container {
+		width:1400px;
+	}
+
+	.container section {
+		float:left;
+		width:1000px / 1400px * 100%;
+	}
+	.container aside[role="complementary"] {
+		float:left;
+		width:400px / 1400px * 100%;
+	}
+}
+
+/* 
+ Print 
+*/
+@media print {
+
+}

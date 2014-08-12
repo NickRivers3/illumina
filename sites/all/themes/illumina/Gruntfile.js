@@ -7,10 +7,10 @@ module.exports = function(grunt) {
 		concat: {   
 			dist: {
 				src: [
-					'js/libraries/jquery-migrate-1.2.1.min.js.js', // jQuery Migrate
-					'bootstrap/js/bootstrap.js', // Bootstrap 
-					'bootstrap/plugins/js/bootstrap-accessibility.min.js', // Bootstrap Accessibility
-					'js/devlopment/script.js'  // Main Script
+					'libraries/jquery-migrate/jquery-migrate-1.2.1.min.js', // jQuery Migrate
+					'libraries/bootstrap/js/bootstrap.js', // Bootstrap 
+					'libraries/bootstrap-accessibility/bootstrap-accessibility.min.js', // Bootstrap Accessibility
+					'js/dev.js'  // Main Script
 				],
 				dest: 'js/script.js',
 			}
@@ -27,20 +27,20 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'css/style.css': 'scss/global.scss'
+					'css/global.css': 'scss/global.scss'
 				}
 			} 
 		},
 		watch: {
 			scripts: {
-				files: ['js/*.js'],
+				files: ['js/dev*.js'],
 				tasks: ['concat', 'uglify'],
 				options: {
 					spawn: false,
 				},
 			},
 			css: {
-				files: ['scss/*.scss'],
+				files: ['scss/*/*.scss'],
 				tasks: ['sass'],
 				options: {
 					spawn: false,

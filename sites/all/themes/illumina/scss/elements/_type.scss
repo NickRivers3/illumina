@@ -1,0 +1,77 @@
+/*
+ Fonts
+*/
+
+/* Font Stacks */
+$body-fonts: sans-serif;
+$heading-fonts: serif;
+
+$small-font:	#{14px}/ #{20px};
+$medium-font:	#{18px}/ #{24px};
+$large-font: 	#{22px}/ #{28px};
+
+
+/* Global Elements */
+body {
+	font:$small-font $body-fonts;
+	color:$primary-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font:$large-font $heading-fonts;
+	color:$secondary-color;
+}
+
+h1 {
+	font:$large-font $heading-fonts;
+	color:$accent-color;
+}
+h2 {
+	font:$medium-font $heading-fonts;
+	color:$accent-color;
+}
+
+
+/*
+ Media Queries
+ ===================================================================================================
+*/
+
+/* 
+ Mobile 
+ max-width: 767px;
+*/
+@media (max-width: 767px) {
+
+}
+
+/* 
+ Tablet Portrait
+ min-width: 768px; and max-width: 991px;
+*/
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* 
+ Tablet Landscape / Medium Desktop
+ min-width: 992px; and max-width: 1199px;
+*/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* 
+ Large Desktop
+ min-width: 1200px;
+*/
+@media (min-width: 1200px) {
+
+}
+
+/* 
+ Print 
+*/
+@media print {
+
+}

@@ -2,5 +2,17 @@
 Main file 
 */
 
-@import 'vars';
-@import 'fonts';
+// Variables and Mixins
+@import 'config/config';
+
+// elements
+@import 'elements/grid';
+@import 'elements/type';
+@import 'elements/header';
+@import 'elements/menus';
+@import 'elements/main';
+@import 'elements/footer';
+@import 'elements/utilities';
+
+// Vendors
+// @import 'vendor/file';

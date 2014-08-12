@@ -1,0 +1,74 @@
+/*
+ * Menus
+*/
+
+.alert {
+	border:1px solid #ccc;
+	padding:10px;
+	color:#333;
+}
+
+.alert-success {
+	@extend .alert;
+	border-color:$alert-success-color;
+	background:$alert-success-color;
+	color:color-contrast($alert-success-color);
+}
+.alert-danger {
+	@extend .alert;
+	border-color:$alert-danger-color;
+	background:$alert-danger-color;
+	color:color-contrast($alert-danger-color);
+}
+.alert-warning {
+	@extend .alert;
+	border-color:$alert-warning-color;
+	background:$alert-warning-color;
+	color:color-contrast($alert-warning-color);
+}
+
+
+
+/*
+ Media Queries
+ ===================================================================================================
+*/
+
+/* 
+ Mobile 
+ max-width: 767px;
+*/
+@media (max-width: 767px) {
+
+}
+
+/* 
+ Tablet Portrait
+ min-width: 768px; and max-width: 991px;
+*/
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* 
+ Tablet Landscape / Medium Desktop
+ min-width: 992px; and max-width: 1199px;
+*/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* 
+ Large Desktop
+ min-width: 1200px;
+*/
+@media (min-width: 1200px) {
+
+}
+
+/* 
+ Print 
+*/
+@media print {
+
+}
