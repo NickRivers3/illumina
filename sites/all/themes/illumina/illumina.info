@@ -8,37 +8,26 @@ base theme = bootstrap
 ;; Regions
 ;;;;;;;;;;;;;;;;;;;;;
 
-regions[navigation]       = 'Navigation'
-regions[header]           = 'Top Bar'
-regions[highlighted]      = 'Highlighted'
-regions[help]             = 'Help'
-regions[carousel]         = 'Carousel'
-regions[content]          = 'Content'
-regions[frontpage_bottom] = 'Frontpage Bottom'
-regions[sidebar_first]    = 'Primary'
-regions[sidebar_second]   = 'Secondary'
-regions[footer]           = 'Footer'
-regions[page_top]        = 'Page top'
-regions[page_bottom]      = 'Page bottom'
-
+regions[navigation]     = 'Navigation'
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer]         = 'Footer'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
 stylesheets[all][] = bootstrap/css/bootstrap.css
-stylesheets[all][] = css/override.css
 stylesheets[all][] = css/style.css
-stylesheets[all][] = css/type.css
-stylesheets[all][] = css/color.css
-stylesheets[all][] = css/link.css
-stylesheets[all][] = css/block.css
-stylesheets[all][] = css/menu.css
-stylesheets[all][] = css/responsive.css
 
-;;;;;;;;;;;;;;;;;;;;;
-;; Javascript
-;;;;;;;;;;;;;;;;;;;;;
-scripts[] = bootstrap/js/bootstrap.js
+;;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;;
+
 scripts[] = js/script.js
-scripts[] = js/jquery-migrate-1.2.1.min.js

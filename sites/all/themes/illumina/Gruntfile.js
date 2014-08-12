@@ -1,54 +1,36 @@
 module.exports = function(grunt) {
-	
-	// Configuration
-	grunt.initConfig({
-		pkg:grunt.file.readJSON('package.json'),
-		
-		// CONCATENATE
-		concat: {
+
+    // 1. All configuration goes here 
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+
+		concat: {   
 			dist: {
 				src: [
-					'libraries/migrate/jquery-migrate-1.2.1.min.js',
-					'libraries/bootstrap/js/bootstrap.js',
-					'libraries/accessibility/bootstrap-accessibility.js',
-					'js/script.js'
+					'js/libraries/jquery-migrate-1.2.1.min.js.js', // jQuery Migrate
+					'bootstrap/js/bootstrap.js', // Bootstrap 
+					'bootstrap/plugins/js/bootstrap-accessibility.min.js', // Bootstrap Accessibility
+					'js/devlopment/script.js'  // Main Script
 				],
-				dest: 'js/build/production.js',
+				dest: 'js/script.js',
 			}
 		},
-		
-		// MINIFY
 		uglify: {
 			build: {
-				src: 'js/build/production.js',
-				dest: 'js/build/production.min.js'
+				src: 'js/script.js',
+				dest: 'js/script.min.js'
 			}
 		},
-		
-		// SASS
 		sass: {
 			dist: {
 				options: {
 					style: 'compressed'
 				},
 				files: {
-					'css/build/global.css': 'sass/global.scss'
+					'css/style.css': 'scss/global.scss'
 				}
 			} 
 		},
-		// OPTIMIZE
-		imagemin: {
-			dynamic: {
-				files: [{
-					expand: true,
-					cwd: 'images/',
-					src: ['**/*.{png,jpg,gif}'],
-					dest: 'images/build/'
-				}]
-			}
-		},
-		
-		// WATCH
 		watch: {
 			scripts: {
 				files: ['js/*.js'],
@@ -58,30 +40,22 @@ module.exports = function(grunt) {
 				},
 			},
 			css: {
-				files: ['sass/*.scss'],
+				files: ['scss/*.scss'],
 				tasks: ['sass'],
-				options: {
-					spawn: false;
-				}
-			},
-			images: {
-				files: ['images/**/*.{png,jpg,gif}', 'images/*.{png,jpg,gif}'],
-				tasks: ['imagemin'],
 				options: {
 					spawn: false,
 				}
 			}
 		}
-	});
-	
-	// Load Tasks
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	
-	// Tasks
-	grunt.registerTask('default', ['watch']);
+    });
 
-}
- 
+    // 3. Where we tell Grunt we plan to use this plug-in.
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
+    // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
+   grunt.registerTask('default');
+
+};
