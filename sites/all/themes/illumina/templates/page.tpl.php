@@ -97,10 +97,11 @@
 
 		<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			<span class="sr-only">Toggle navigation</span>
+			<span class="menu-title">Menu</span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
+			
 		</button>
 		
 	</div>
@@ -146,11 +147,15 @@
 		</aside>  <!-- /#sidebar-first -->
 		<?php endif; ?>
 
-		<section<?php print $content_column_class; ?>>
+		<section id="main-content" <?php print $content_column_class; ?>>
 			<?php if (!empty($page['highlighted'])): ?>
 				<div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
 			<?php endif; ?>
-			<?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+			<?php if (!empty($breadcrumb)): ?>
+				<div class="row">
+					<?php print $breadcrumb; ?>
+				</div?
+			<?php endif;?>
 			<a id="main-content"></a>
 			<?php print render($title_prefix); ?>
 			<?php if (!empty($title)): ?>
@@ -159,7 +164,9 @@
 			<?php print render($title_suffix); ?>
 			<?php print $messages; ?>
 			<?php if (!empty($tabs)): ?>
-				<?php print render($tabs); ?>
+				<div class="nav-tabs-container">
+					<?php print render($tabs); ?>
+				</div>
 			<?php endif; ?>
 			<?php if (!empty($page['help'])): ?>
 				<?php print render($page['help']); ?>

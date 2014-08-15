@@ -2,7 +2,24 @@
  * Main
 */
 
+// Page Header 
+.page-header {
+	border:0;
+	padding-bottom:0px;
+	margin:20px 0px;
+}
 
+// Main Container 
+.main-container {
+	border-bottom:10px solid #ccc;
+	min-height:320px;
+	padding-bottom:20px;
+}
+
+// Breadcrumb
+.breadcrumb {
+	border-radius:0px 0px 5px 5px;
+}
 
 /*
  Media Queries

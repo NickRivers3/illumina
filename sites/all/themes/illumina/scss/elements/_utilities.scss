@@ -3,28 +3,18 @@
 */
 
 .alert {
-	border:1px solid #ccc;
 	padding:10px;
 	color:#333;
 }
 
 .alert-success {
 	@extend .alert;
-	border-color:$alert-success-color;
-	background:$alert-success-color;
-	color:color-contrast($alert-success-color);
 }
 .alert-danger {
 	@extend .alert;
-	border-color:$alert-danger-color;
-	background:$alert-danger-color;
-	color:color-contrast($alert-danger-color);
 }
 .alert-warning {
 	@extend .alert;
-	border-color:$alert-warning-color;
-	background:$alert-warning-color;
-	color:color-contrast($alert-warning-color);
 }
 
 

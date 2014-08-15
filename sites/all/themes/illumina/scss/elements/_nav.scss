@@ -2,40 +2,114 @@
  * Nav
 */
 
+// Links
 a:hover, 
 a:focus {
 	color: #2a6496;
 	text-decoration: underline;
 }
 
+// Navigation Defaults
 .nav > li > a {
 	&:hover, &:focus {
 		background-color:transparent;
 	}
 }
-
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:hover, 
-.navbar-default .navbar-nav > .active > a:focus {
-	background-color:transparent;
+li.dropdown:hover > .dropdown-menu {
+	display:block;
 }
 
-.navbar-default {
-	background-color:transparent;
+// Primary Menu
+#primary-nav {
+	background-color:#ebebeb;
+	padding-left:0px;
+	padding-right:0px;
 	border:0;
-	border-radius:0;
+	border-radius:5px 5px 0px 0px;
+	margin-bottom:0px;
+	
+	.navbar-collapse,
+	.navbar-form {
+		padding-left:0px;
+		padding-right:0px;
+		border:0;
+		border-color:transparent;
+	}
+	.nav > li {
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+	.nav > li > a {
+		font-weight:$light;
+		font-size:18px;
+		padding:5px 30px;
+		border-right:1px solid #C4C4C4;
+	}
+	.nav > li.last > a {
+		border:0;
+	}
+	.nav > li.active a, 
+	.nav > li.active a:hover, 
+	.nav > li.active a:focus {
+		background-color:transparent;
+	}
 }
 
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
+// Dropdown
+
+.dropdown-menu {
+	background-color:#ebebeb;
 	border:0;
-	border-color:transparent;
+	
+	> .active a,
+	> .active a:hover,
+	> .active a:focus {
+		background-color:transparent;
+		color:#555;
+	}
+	
 }
 
 
-#primary-nav .nav > li > a {
-	font-weight:$light;
-	font-size:18px;
+
+
+// Navigation Toggle Button
+button.navbar-toggle {
+	float: left;
+	border-color: transparent;
+	padding: 0px 20px;
+	margin: 0px;
+	z-index: 100;
+	height: 41px;
+	width: 100%;
+	border-radius: 0;
+	border: 0;
+	
+	.menu-title {
+		float: left;
+		font-size: 20px;
+		line-height: 18px;
+		text-transform: uppercase;
+		padding-left: 30px;
+	}
+	
+	.icon-bar {
+		background-color: #555;
+		width: 24px;
+		height: 4px;
+		border-radius: 5px;
+	}
+}
+
+// Nav Tabs
+.nav-tabs-container {
+	margin-bottom: 20px;
+	
+	ul.nav-tabs {
+		li {
+			a {}
+		}
+	}
 }
 
 /*
