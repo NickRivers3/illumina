@@ -74,19 +74,17 @@
  */
 ?>
 <header id="header" role="banner">
-	
-	<div id="header-top" class="container">
-		<div id="logo">
-			<?php if ($logo): ?>
-				<a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-					<img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-				</a>
-			<?php endif; ?>
-			<?php if (!empty($site_name)): ?>
-				<a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
-			<?php endif; ?>
-		</div>
-
+	<div id="header-main" class="container">
+		<?php if ($logo): ?>
+			<a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+				<img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+			</a>
+		<?php endif; ?>
+		
+		<?php if (!empty($site_name)): ?>
+			<a class="name" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
+		<?php endif; ?>
+		
 		<?php if (!empty($secondary_nav)): ?>
 			<div id="secondary-nav" class="pull-right">
 				<nav role="navigation">
@@ -97,40 +95,29 @@
 			</div>
 		<?php endif; ?>
 
-		<?php if (!empty($page['navigation'])): ?>
-			<div id="navigation-block-region" class="pull-right">
-				<?php if (!empty($page['navigation'])): ?>
-					<?php print render($page['navigation']); ?>
-				<?php endif; ?>
-			</div>
-		<?php endif; ?>
-	</div>
-	
-	<div id="primary-navigation">
 		<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			<span class="menu-title">Menu</span>
+			<span class="sr-only">Toggle navigation</span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<div id="navbar" role="navigation" class="<?php print $navbar_classes; ?>">
-			<?php if (!empty($primary_nav)): ?>
-				<div id="primary-nav" class="col-lg-12 col-md-12">
-					<div class="navbar-collapse collapse">
-						<nav role="navigation">
-							<?php if (!empty($primary_nav)): ?>
-								<?php print render($primary_nav); ?>
-							<?php endif; ?>
-						</nav>
-					</div>
-				</div>
-			<?php endif; ?>
-		</div>
+		
+	</div>
+	
+	<div id="primary-nav" role="banner" class="<?php print $navbar_classes; ?>">
+		<?php if (!empty($primary_nav)): ?>
+			<div class="navbar-collapse collapse">
+				<nav role="navigation">
+					<?php if (!empty($primary_nav)): ?>
+						<?php print render($primary_nav); ?>
+					<?php endif; ?>
+				</nav>
+			</div>
+		<?php endif; ?>
 	</div>
 	
 </header>
-
 
 <div class="main-container container">
 
@@ -138,14 +125,25 @@
 		<?php if (!empty($site_slogan)): ?>
 			<p class="lead"><?php print $site_slogan; ?></p>
 		<?php endif; ?>
+
 		<?php print render($page['header']); ?>
+		<?php if (!empty($page['navigation'])): ?>
+			<div class="page-nav">
+				<nav role="navigation">
+					<?php if (!empty($page['navigation'])): ?>
+						<?php print render($page['navigation']); ?>
+					<?php endif; ?>
+				</nav>
+			</div>
+		<?php endif; ?>
 	</header> <!-- /#page-header -->
 
 	<div class="row">
+
 		<?php if (!empty($page['sidebar_first'])): ?>
-			<aside class="col-lg-3 col-md-3 col-sm-3 col-xs-12" role="complementary">
-				<?php print render($page['sidebar_first']); ?>
-			</aside>  <!-- /#sidebar-first -->
+		<aside class="col-sm-3" role="complementary">
+			<?php print render($page['sidebar_first']); ?>
+		</aside>  <!-- /#sidebar-first -->
 		<?php endif; ?>
 
 		<section<?php print $content_column_class; ?>>

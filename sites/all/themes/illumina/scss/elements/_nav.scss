@@ -1,47 +1,42 @@
 /*
- Fonts
+ * Nav
 */
 
-@import url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
-
-/* Font Stacks */
-$font: 'Ubuntu', sans-serif;
-
-// Font weights
-$light: 300;
-$regular: 400;
-$medium: 500;
-$bold: 700;
-
-/* Global Elements */
-body, h1, h2, h3, h4, h5, h6, h7 {
-	font-family:$font;
-	color:#333;
+a:hover, 
+a:focus {
+	color: #2a6496;
+	text-decoration: underline;
 }
 
-body {
-	font-size:14px;
-	line-height:20px;
+.nav > li > a {
+	&:hover, &:focus {
+		background-color:transparent;
+	}
 }
 
-h1, h2, h3, h4, h5, h6, h7 {
-	font-weight:300;
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	background-color:transparent;
 }
 
-h1 {}
+.navbar-default {
+	background-color:transparent;
+	border:0;
+	border-radius:0;
+}
 
-h2 {}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+	border:0;
+	border-color:transparent;
+}
 
-h3 {}
 
-h4 {}
-
-h5 {}
-
-h6 {}
-
-h7 {}
-
+#primary-nav .nav > li > a {
+	font-weight:$light;
+	font-size:18px;
+}
 
 /*
  Media Queries

@@ -2,23 +2,30 @@
  * Header
 */
 
-#header {
-	background:$header-bg-color;
+#header {}
+#header-main {
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+#header-main .logo {}
+#header-main .logo img {}
+#header-main .name {
+	display: block;
+	line-height: 60px;
+	font-size: 20px;
+	padding-left: 5px;
+	float: left;
+	color: #555;
 }
 
-#header-top {}
-
-#logo {}
-
-#logo .logo {}
-
-#logo .logo img {}
-
-#logo .name {}
-
 #secondary-nav {}
-
-#primary-nav {}
+#primary-nav {
+	background-color:$secondary-color;
+	padding-left:0;
+	padding-right:0;
+}
 
 
 /*

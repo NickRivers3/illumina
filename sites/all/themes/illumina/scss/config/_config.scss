@@ -7,31 +7,12 @@
  ===================================================================================================
 */
 
-// Font weights
-$light: 100;
-$regular: 400;
-$bold: 600;
-
-// Sans Serif Font
-$sans-serif-font-family: sans-serif;
-$sans-serif-font-weight: $regular;
-$sans-serif-font-size: 13px;
-$sans-serif-line-height: 15px;
-
-// Fixed Font
-$serif-font-family: serif;
-$serif-font-size: 85%;
-$serif-font-size: 13px;
-$serif-line-height: 15px;
-
-// Headings
-$header-font-weight: $bold;
-
 // Colors
-$primary-color:#000;
-$secondary-color:#777;
-$accent-color:#999;
+$primary-color:#df8906;
+$secondary-color:#ffd89a;
+$accent-color:#e08b06;
 $header-bg-color:whitesmoke;
+$link-color:green;
 
 // Contrast Function
 $alert-success-color:hsla(101, 72%, 37%, 1);
