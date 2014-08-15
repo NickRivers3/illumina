@@ -2,34 +2,39 @@
  Fonts
 */
 
+@import url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
+
 /* Font Stacks */
-$body-fonts: sans-serif;
-$heading-fonts: serif;
-
-$small-font:	#{14px}/ #{20px};
-$medium-font:	#{18px}/ #{24px};
-$large-font: 	#{22px}/ #{28px};
-
+$font: 'Ubuntu', sans-serif;
 
 /* Global Elements */
-body {
-	font:$small-font $body-fonts;
+body, h1, h2, h3, h4, h5, h6, h7 {
+	font-family:$font;
 	color:$primary-color;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font:$large-font $heading-fonts;
-	color:$secondary-color;
+body {
+	font-size:14px;
+	line-height:20px;
 }
 
-h1 {
-	font:$large-font $heading-fonts;
-	color:$accent-color;
+h1, h2, h3, h4, h5, h6, h7 {
+	font-weight:300;
 }
-h2 {
-	font:$medium-font $heading-fonts;
-	color:$accent-color;
-}
+
+h1 {}
+
+h2 {}
+
+h3 {}
+
+h4 {}
+
+h5 {}
+
+h6 {}
+
+h7 {}
 
 
 /*

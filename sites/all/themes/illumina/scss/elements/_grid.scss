@@ -58,18 +58,6 @@
  min-width: 1400px;
 */
 @media (min-width: 1400px) {
-	.container {
-		width:1400px;
-	}
-
-	.container section {
-		float:left;
-		width:1000px / 1400px * 100%;
-	}
-	.container aside[role="complementary"] {
-		float:left;
-		width:400px / 1400px * 100%;
-	}
 }
 
 /* 

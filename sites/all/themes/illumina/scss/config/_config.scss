@@ -31,13 +31,14 @@ $header-font-weight: $bold;
 $primary-color:#000;
 $secondary-color:#777;
 $accent-color:#999;
+$header-bg-color:whitesmoke;
 
 // Contrast Function
 $alert-success-color:hsla(101, 72%, 37%, 1);
 $alert-warning-color:#ffc53a;
 $alert-danger-color:rgb(172, 34, 34);
 
-
+// Color Contrast Function
 @function color-contrast($color) {
   @if (lightness($color) > 50) {
     @return #000000; // Lighter background, return dark color
