@@ -1,31 +1,21 @@
 /*
- * Main
+ * Views
 */
 
-// .page-header
-.page-header {
-	border:0;
-	padding-bottom:0px;
-	margin:20px 0px;
-}
 
-// .main-container
-.main-container {
-	border-bottom:10px solid #ccc;
-	min-height:320px;
-	padding-bottom:20px;
+// .view-news
+.view {}
+.view h3 {
+	margin:0px;
 }
-
-// .breadcrumb
-.breadcrumb {
-	border-radius:0px 0px 5px 5px;
+.view .views-row {
+	margin:0px 0px 20px 0px;
+	padding:0px 0px 20px 0px;
+	border-bottom:5px solid #ccc;
 }
-
-// .submitted
-.submitted {
-	margin-bottom:10px;
+.view .views-row.views-row-last {
+	border-bottom:0;
 }
-
 
 /*
  Media Queries

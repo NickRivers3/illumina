@@ -2,10 +2,10 @@
  Fonts
 */
 
-@import url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
-
-/* Font Stacks */
+// Font Stacks
+@import url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Ubuntu+Condensed');
 $font: 'Ubuntu', sans-serif;
+$fontCondensed: 'Ubuntu Condensed', sans-serif;
 
 // Font weights
 $light: 300;
@@ -13,7 +13,7 @@ $regular: 400;
 $medium: 500;
 $bold: 700;
 
-/* Global Elements */
+// Global Elements
 body, h1, h2, h3, h4, h5, h6, h7 {
 	font-family:$font;
 	color:#333;
@@ -42,6 +42,21 @@ h6 {}
 
 h7 {}
 
+// .title
+h3.title {
+	font-weight:$regular;
+}
+
+// body.teaser
+.body.teaser {
+	margin:10px 0px;
+}
+
+.date {
+	font-family:$fontCondensed;
+	font-size:14px;
+	line-height:14px;
+}
 
 /*
  Media Queries

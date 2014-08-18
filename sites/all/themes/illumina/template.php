@@ -119,3 +119,64 @@ function illumina_menu_link__main_menu(array $variables){
 	$output = l($element['#title'], $element['#href'], $element['#localized_options']);
 	return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
+
+
+/** 
+ * illumina_breadcrumb
+ * default
+**/
+function illumina_breadcrumb($breadcrumb) {
+	$links = array();
+	$path = '';
+	$arguments = explode('/', request_uri());
+	foreach($arguments as $key => $value) {
+		if(empty($value)) {
+			unset($arguments[$key]);
+		}
+	}
+	$arguments = array_values($arguments);
+	$links[] = l(t('Home'), '<front>');
+	if(!empty($arguments)) {
+		foreach ($arguments as $key => $value) {
+			if ($key == (count($arguments) - 1)) {
+				//$links[] = truncate_utf8(drupal_get_title(), 90, TRUE, TRUE);
+				$links[] = drupal_get_title();
+			} else {
+				if (!empty($path)) {
+					$path .= '/'. $value;
+				} else {
+					$path .= $value;
+				}
+				$links[] = l(ucwords(str_replace('-', ' ', $value)), $path);
+			}
+		}
+	}
+	drupal_set_breadcrumb($links);
+	$breadcrumb = drupal_get_breadcrumb();
+	$output = theme('item_list', array(
+		'attributes' => array(
+			'class' => array('breadcrumb'),
+		),
+		'items' => $breadcrumb,
+		'type' => 'ol',
+    ));
+	return $output;
+}
+
+/** 
+ * illumina_preprocess_node
+ * change date format
+**/
+function illumina_preprocess_node(&$variables, $hook) {
+	switch($variables['type']) {
+		case 'news_article':
+			if (variable_get('node_submitted_' . $variables['node']->type, TRUE)) {
+				$variables['submitted'] = date("l, F j, Y", $variables['created']);
+			}
+		break;
+		default:
+			if (variable_get('node_submitted_' . $variables['node']->type, TRUE)) {
+				$variables['submitted'] = t('Submitted by !username on !datetime', array('!username' => $variables['name'], '!datetime' => date("l, F j, Y", $variables['created'])));
+			}
+	}
+}

@@ -151,7 +151,7 @@
 			<?php if (!empty($page['highlighted'])): ?>
 				<div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
 			<?php endif; ?>
-			<?php if (!empty($breadcrumb)): ?>
+			<?php if (!empty($breadcrumb) && !$is_front): ?>
 				<div class="row">
 					<?php print $breadcrumb; ?>
 				</div?

@@ -2,14 +2,14 @@
  * Nav
 */
 
-// Links
+// a
 a:hover, 
 a:focus {
 	color: #2a6496;
 	text-decoration: underline;
 }
 
-// Navigation Defaults
+// .nav
 .nav > li > a {
 	&:hover, &:focus {
 		background-color:transparent;
@@ -19,7 +19,7 @@ li.dropdown:hover > .dropdown-menu {
 	display:block;
 }
 
-// Primary Menu
+// #primary-nav
 #primary-nav {
 	background-color:#ebebeb;
 	padding-left:0px;
@@ -48,6 +48,11 @@ li.dropdown:hover > .dropdown-menu {
 	.nav > li.last > a {
 		border:0;
 	}
+	.nav > li:hover, 
+	.nav > li:focus,
+	.nav > li.active-trail {
+		background-color:#ffd89a;
+	}
 	.nav > li.active a, 
 	.nav > li.active a:hover, 
 	.nav > li.active a:focus {
@@ -55,25 +60,29 @@ li.dropdown:hover > .dropdown-menu {
 	}
 }
 
-// Dropdown
-
+// .dropdown
 .dropdown-menu {
-	background-color:#ebebeb;
+	background-color:#ffd89a;
 	border:0;
+	border-bottom:5px solid $primary-color;
+	@include box-shadow(0, 3px, 5px, rgba(0, 0, 0, .175));
+	border-radius: 0px 0px 4px 4px;
 	
-	> .active a,
-	> .active a:hover,
-	> .active a:focus {
+	> li > a {
+		padding:5px 30px;
+	}
+	> li > a:hover,
+	> li > a:focus,
+	> li.active > a,
+	> li.active > a:hover,
+	> li.active > a:focus {
 		background-color:transparent;
 		color:#555;
 	}
 	
 }
 
-
-
-
-// Navigation Toggle Button
+// .navbar-toggle
 button.navbar-toggle {
 	float: left;
 	border-color: transparent;
@@ -101,7 +110,7 @@ button.navbar-toggle {
 	}
 }
 
-// Nav Tabs
+// .nav-tabs
 .nav-tabs-container {
 	margin-bottom: 20px;
 	
@@ -111,6 +120,38 @@ button.navbar-toggle {
 		}
 	}
 }
+
+
+// .read-more
+.read-more {
+	a {
+		font-family:$fontCondensed;
+		display:block;
+		text-transform: uppercase;
+		font-size: 12px;
+		line-height: 12px;
+		text-decoration:none;
+	}
+	a:after {
+		content:"\25b6";
+		position:absolute;
+		margin: 0px 0px 0px 2px;
+	}
+}
+
+// h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7 a,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7 a {
+	text-decoration:none;
+	
+	&:hover {
+		text-decoration:none;
+	}
+	
+	&:focus {
+		text-decoration:none;
+	}
+}
+
 
 /*
  Media Queries
