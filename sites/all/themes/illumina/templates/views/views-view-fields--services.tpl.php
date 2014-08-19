@@ -24,6 +24,7 @@
  * @ingroup views_templates
  */
 ?>
+<div class="image circle"><?php print $fields['field_image']->content; ?></div>
 <h3 class="title"><?php print $fields['title']->content; ?></h3>
 <div class="body teaser"><?php print $fields['body']->content; ?></div>
 <div class="read-more"><?php print $fields['view_node']->content; ?></div>

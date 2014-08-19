@@ -2,6 +2,7 @@
  * Menus
 */
 
+// .alerts
 .alert {
 	padding:10px;
 	color:#333;
@@ -17,48 +18,48 @@
 	@extend .alert;
 }
 
+// .image
+.image {}
+.image.circle {
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.image img{
+	width:100%;
+	height:auto;
+}
 
 
-/*
- Media Queries
- ===================================================================================================
-*/
+// Media Queries //////////
 
-/* 
- Mobile 
- max-width: 767px;
-*/
+// Mobile 
+// max-width: 767px;
 @media (max-width: 767px) {
 
 }
 
-/* 
- Tablet Portrait
- min-width: 768px; and max-width: 991px;
-*/
+// Tablet Portrait 
+// min-width: 768px; and max-width: 991px;
 @media (min-width: 768px) and (max-width: 991px) {
 
 }
 
-/* 
- Tablet Landscape / Medium Desktop
- min-width: 992px; and max-width: 1199px;
-*/
+// Tablet Landscape / Medium Desktop
+// min-width: 992px; and max-width: 1199px;
 @media (min-width: 992px) and (max-width: 1199px) {
 
 }
 
-/* 
- Large Desktop
- min-width: 1200px;
-*/
+// Large Desktop
+// min-width: 1200px;
 @media (min-width: 1200px) {
-
+	.image.circle {
+		max-width: 200px;
+	}
 }
 
-/* 
- Print 
-*/
+// Print
 @media print {
 
 }

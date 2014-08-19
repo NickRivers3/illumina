@@ -147,7 +147,7 @@ function illumina_breadcrumb($breadcrumb) {
 				} else {
 					$path .= $value;
 				}
-				$links[] = l(ucwords(str_replace('-', ' ', $value)), $path);
+				$links[] = l(ucfirst(str_replace('-', ' ', $value)), $path);
 			}
 		}
 	}

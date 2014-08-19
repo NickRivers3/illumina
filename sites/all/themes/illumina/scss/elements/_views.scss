@@ -3,60 +3,88 @@
 */
 
 
-// .view-news
+// .views
 .view {}
 .view h3 {
 	margin:0px;
 }
-.view .views-row {
+.view .views-row {}
+.view .item {
+	padding-bottom:30px;
+}
+
+.view .body {
+	margin-top:10px;
+}
+
+// .block-views
+.block-views {
+	margin-top:20px;
+}
+
+// .view-news 
+.view-news {}
+.view-news .views-row {
 	margin:0px 0px 20px 0px;
 	padding:0px 0px 20px 0px;
 	border-bottom:5px solid #ccc;
 }
-.view .views-row.views-row-last {
+.view-news .views-row.views-row-last {
 	border-bottom:0;
 }
+.view-news .item {}
 
-/*
- Media Queries
- ===================================================================================================
-*/
+// .view-services 
+.view-services {}
+.view-news .views-row {}
+.view-services .item {
+	text-align:center;
+}
+.view-services .image {
+	margin-bottom:10px;
+}
 
-/* 
- Mobile 
- max-width: 767px;
-*/
+// .view-our-team 
+.view-our-team {}
+.view-our-team .views-row {}
+.view-our-team .item {
+	min-height:230px;
+}
+.view-our-team .user-image {
+	padding-left:0px;
+}
+.view-our-team .user-content {
+	padding-right:0px;
+	padding-left:0px;
+}
+
+// Media Queries //////////
+
+// Mobile 
+// max-width: 767px;
 @media (max-width: 767px) {
 
 }
 
-/* 
- Tablet Portrait
- min-width: 768px; and max-width: 991px;
-*/
+// Tablet Portrait 
+// min-width: 768px; and max-width: 991px;
 @media (min-width: 768px) and (max-width: 991px) {
 
 }
 
-/* 
- Tablet Landscape / Medium Desktop
- min-width: 992px; and max-width: 1199px;
-*/
+// Tablet Landscape / Medium Desktop
+// min-width: 992px; and max-width: 1199px;
 @media (min-width: 992px) and (max-width: 1199px) {
 
 }
 
-/* 
- Large Desktop
- min-width: 1200px;
-*/
+// Large Desktop
+// min-width: 1200px;
 @media (min-width: 1200px) {
 
 }
 
-/* 
- Print 
-*/
+// Print
 @media print {
 
 }
