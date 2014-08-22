@@ -41,6 +41,14 @@ h5 {}
 h6 {}
 
 // .title
+h2.title {}
+
+h2.title.slide {
+	font-size:42px;
+	line-height:48px;
+	font-weight:$bold;
+}
+
 h3.title {
 	font-weight:$regular;
 }

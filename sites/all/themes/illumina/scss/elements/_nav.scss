@@ -9,6 +9,11 @@ a:focus {
 	text-decoration: underline;
 }
 
+// navbar-nav 
+.navbar-nav {
+	margin:0px;
+}
+
 // .nav
 .nav > li > a {
 	&:hover, &:focus {
@@ -44,6 +49,9 @@ li.dropdown:hover > .dropdown-menu {
 		font-size:18px;
 		padding:5px 30px;
 		border-right:1px solid #C4C4C4;
+		
+		&:focus,
+		&:hover {}
 	}
 	.nav > li.last > a {
 		border:0;
@@ -81,6 +89,24 @@ li.dropdown:hover > .dropdown-menu {
 	}
 	
 }
+// #secondary-menu
+#secondary-nav {
+	.nav {
+		float:right;
+		
+		> li {
+			> a {
+				padding-left:10px;
+				padding-right:10px;
+		
+				&:focus,
+				&:hover {}
+				&:active {}
+			}
+		}
+	}
+}
+
 
 // .navbar-toggle
 button.navbar-toggle {
@@ -121,6 +147,11 @@ button.navbar-toggle {
 	}
 }
 
+// .breadcrumb
+.breadcrumb {
+	border-radius:0px 0px 5px 5px;
+	margin-bottom:10px;
+}
 
 // .read-more
 a.views-more-link,
