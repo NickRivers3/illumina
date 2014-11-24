@@ -28,7 +28,51 @@ function illumina_preprocess_page(&$variables, $hook) {
 	else {
 		$variables['content_column_class'] = ' class="col-sm-12"';
 	}
+	
+	// Primary nav.
+	$variables['primary_nav'] = FALSE;
+	if ($variables['main_menu']) {
+		// Build links.
+		$variables['primary_nav'] = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+		// Provide default theme wrapper function.
+		$variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
+	}
+	// Secondary nav.
+	$variables['secondary_nav'] = FALSE;
+	if ($variables['secondary_menu']) {
+		// Build links.
+		$variables['secondary_nav'] = menu_tree(variable_get('menu_secondary_links_source', 'user-menu'));
+		// Provide default theme wrapper function.
+		$variables['secondary_nav']['#theme_wrappers'] = array('menu_tree__secondary');
+	}
+	$variables['navbar_classes_array'] = array(
+		'navbar',
+		'col-lg-8 col-md-8 col-sm-6 col-xs-12',
+	
+	);
+	if (theme_get_setting('bootstrap_navbar_position') !== '') {
+		$variables['navbar_classes_array'][] = 'navbar-' . theme_get_setting('bootstrap_navbar_position');
+	}
+	else {
+		$variables['navbar_classes_array'][] = 'container';
+	}
+	if (theme_get_setting('bootstrap_navbar_inverse')) {
+		$variables['navbar_classes_array'][] = 'navbar-inverse';
+	}
+	else {
+		$variables['navbar_classes_array'][] = 'navbar-default';
+	}
 }
+
+/**
+ * Implements hook_process_page().
+ *
+ * @see page.tpl.php
+ */
+function illumina_process_page(&$variables) {
+  $variables['navbar_classes'] = implode(' ', $variables['navbar_classes_array']);
+}
+
 
 /**
 * illumina_menu_link()

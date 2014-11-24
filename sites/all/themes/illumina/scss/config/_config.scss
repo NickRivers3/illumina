@@ -6,20 +6,20 @@
  Variables
  ===================================================================================================
 */
-
 // Colors
-$primary-color:#df8906;
-$secondary-color:#ffd89a;
-$accent-color:#e08b06;
-$header-bg-color:whitesmoke;
-$link-color:green;
-
+$gold:rgb(237,170,0);
+$magenta:rgb(191,52,117);
+$blue:rgb(78,177,217);
+$green:rgb(187,191,73);
+$orange:rgb(217,144,54);
+$black:rgb(0,0,0);
+$white:rgb(255,255,255);
+$trans:rgba(255,255,255,.5);
 
 /*
  Mixins
  ===================================================================================================
 */
-
 // Border Radius
 @mixin border-radius($radius) {
 	-webkit-border-radius: $radius;
@@ -28,8 +28,6 @@ $link-color:green;
 	    -ms-border-radius: $radius;
 	        border-radius: $radius;
 }
-
-
 // Box Shadow
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
 	@if $inset {

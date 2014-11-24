@@ -16,15 +16,18 @@
 	// To understand behaviors, see https://drupal.org/node/756722#behaviors
 	Drupal.behaviors.my_custom_behavior = {
 		attach: function (context, settings) {
-
-			// Check if the element exists and if so run some code.
-			$.fn.exists = function (callback) {
-				var args = [].slice.call(arguments, 1);
-				if (this.length) {
-					callback.call(this, args);
-				}
-				return this;
-			};
+			
+			
+			var windowHeight = $( window ).height();
+			$("#view-frontpage-carousel-slider").css({
+				"height": windowHeight + "px"
+			});
+			$(".view-frontpage-carousel .slider-content").css({
+				"height": windowHeight + "px"
+			});
+			
+			var slider = $("#view-frontpage-carousel-slider");
+			
 		}
 	};
 })(jQuery, Drupal, this, this.document);

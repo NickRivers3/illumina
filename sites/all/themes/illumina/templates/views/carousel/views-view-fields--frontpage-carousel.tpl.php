@@ -24,18 +24,17 @@
  * @ingroup views_templates
  */
 ?>
-<?php if (!empty($fields['title'])): ?>
-	<h2 class="title slide"><?php print $fields['title']->content; ?></h2>
-<?php endif; ?>
+<?php 
+	$nid = $fields['nid']->content;
+?>
 
-<?php if (!empty($fields['body'])): ?>
-	<div class="body teaser"><?php print $fields['body']->content; ?></div>
-<?php endif; ?>
-
-<?php if (!empty($fields['field_slide_link'])): ?>
-	<div class="read-more"><?php print $fields['field_slide_link']->content; ?></div>
-<?php endif; ?>
-
-<?php if (!empty($fields['field_image'])): ?>
-	<div class="slide image"><?php print $fields['field_image']->content; ?></div>
-<?php endif; ?>
+<div id="slide-<?php print $nid; ?>" class="slide <?php if($nid == 155) {print ' active';}?>">
+	<div class="slide-image">
+		<?php print $fields['field_slide_image']->content; ?>
+	</div>
+	<div class="slide-title-container">
+		<h2 class="slide-title">
+			<?php print $fields['title']->content; ?>
+		</h2>
+	</div>
+</div>

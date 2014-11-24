@@ -27,7 +27,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class="<?php print $classes; ?>">
+<div id="view-frontpage-carousel-slider" class="<?php print $classes; ?>">
 	<?php print render($title_prefix); ?>
 	<?php if ($title): ?>
 		<?php print $title; ?>
@@ -47,12 +47,12 @@
 
 	<?php if ($attachment_before): ?>
 		<div class="attachment attachment-before">
-			<?php print $attachment_before; ?>
+		<?php print $attachment_before; ?>
 		</div>
 	<?php endif; ?>
 
 	<?php if ($rows): ?>
-		<div class="view-content row flush">
+		<div class="slider-content">
 			<?php print $rows; ?>
 		</div>
 	<?php elseif ($empty): ?>
@@ -66,7 +66,7 @@
 	<?php endif; ?>
 
 	<?php if ($attachment_after): ?>
-		<div class="attachment attachment-after">
+		<div class="attachment container">
 			<?php print $attachment_after; ?>
 		</div>
 	<?php endif; ?>
@@ -77,13 +77,13 @@
 
 	<?php if ($footer): ?>
 		<div class="view-footer">
-			<?php print $footer; ?>
+		<?php print $footer; ?>
 		</div>
 	<?php endif; ?>
 
 	<?php if ($feed_icon): ?>
 		<div class="feed-icon">
-			<?php print $feed_icon; ?>
+		<?php print $feed_icon; ?>
 		</div>
 	<?php endif; ?>
 

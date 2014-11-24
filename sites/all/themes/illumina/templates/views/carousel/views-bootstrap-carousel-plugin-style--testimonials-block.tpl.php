@@ -2,7 +2,7 @@
 	<!-- Carousel items -->
 	<div class="carousel-inner">
 		<?php foreach ($rows as $key => $row): ?>
-		<div class="item row flush<?php if ($key === 0) print 'active' ?>">
+		<div class="item row flush <?php if ($key === 0) print 'active' ?>">
 			<?php print $row ?>
 		</div>
 		<?php endforeach ?>

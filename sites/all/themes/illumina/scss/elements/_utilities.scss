@@ -29,12 +29,17 @@
 	width:100%;
 	height:auto;
 }
-.image.logo img {
-	width:auto;
-	max-width:100%;
+.image.logo {
+	img {
+		width:auto;
+		max-width:100%;
+	}
 }
 
-
+// .block
+.block {
+	margin-bottom:20px;
+}
 
 
 // Media Queries //////////
