@@ -3,9 +3,10 @@
 */
 
 // Font Stacks
-@import url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Ubuntu+Condensed');
+@import url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Ubuntu+Condensed|Merriweather:400,300italic,400italic,300');
 $font: 'Ubuntu', sans-serif;
 $fontCondensed: 'Ubuntu Condensed', sans-serif;
+$fontAlt: 'Merriweather', serif;
 
 // Font weights
 $light: 300;

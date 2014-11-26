@@ -10,11 +10,15 @@
 $gold:rgb(237,170,0);
 $magenta:rgb(191,52,117);
 $blue:rgb(78,177,217);
+$greyBlue:rgb(79,92,115);
 $green:rgb(187,191,73);
 $orange:rgb(217,144,54);
 $black:rgb(0,0,0);
 $white:rgb(255,255,255);
-$trans:rgba(255,255,255,.5);
+$transParent:rgba(255,255,255,0);
+$transLight:rgba(255,255,255,.5);
+$trans:rgba(255,255,255,.6);
+$transDark:rgba(255,255,255,.8);
 
 /*
  Mixins
@@ -44,3 +48,5 @@ $trans:rgba(255,255,255,.5);
 		box-shadow: $top $left $blur $color;
 	}
 }
+
+
