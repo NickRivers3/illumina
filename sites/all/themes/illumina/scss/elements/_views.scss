@@ -30,7 +30,6 @@
 		height: 1000px;
 		overflow: hidden;
 		z-index:1;
-
 		.slide-image {
 			position: absolute;
 			top: 0px;
@@ -99,7 +98,7 @@
 			padding:15px;
 			border-radius:5px;
 			background-color:$trans;
-			min-height:400px;
+			min-height:345px;
 			border: 5px solid $transParent;
 			.slide-icon {
 				position: relative;
@@ -136,10 +135,19 @@
 				}
 			}
 			.slide-link {
+				position:absolute;
+				bottom:10px;
 				a {
 					font-size:16px;
 					line-height:18px;
 					font-weight:$bold;
+					float:left;
+					&:after {
+						content:"\bb";
+						display:block;
+						position:relative;
+						float:left;
+					}
 				}
 			}
 		}
@@ -374,6 +382,21 @@
 	}
 }
 
+// frontpage mision
+.mission-container {
+	.content {
+		font-size:30px;
+		line-height:50px;
+		color:$gold;
+		p {
+			color:$gold;
+			font-size:30px;
+			line-height:50px;
+			text-align:left;
+		}
+	}
+}
+
 // frontpage reasons
 #reasons-content {
 	.block-header {
@@ -455,11 +478,17 @@
 				font-weight:$light;
 				font-style:italic;
 				color:$white;
+				p {
+					color:$white;
+				}
 			}
 			.reason-client {
 				font-size:16px;
 				line-height:22px;
 				color:$white;
+				p {
+					color:$white;
+				}
 			}
 		}
 	}
@@ -537,8 +566,7 @@
 				padding-right:20px;
 				display:table;
 				width: 100%;
-				height:auto;
-				min-height:100px;
+				height:100px;
 			}
 			a {
 				display:table-cell;
@@ -546,10 +574,9 @@
 				text-align:center;
 			}
 			img {
-				width: auto;
-				max-width: 100%;
+				display:block;
+				width: 100%;
 				height: auto;
-				max-height:80px;
 				vertical-align:middle;
 			}
 		}
