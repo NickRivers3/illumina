@@ -20,8 +20,10 @@ regions[content]              = 'Content'
 regions[sidebar_first]        = 'Primary'
 regions[sidebar_second]       = 'Secondary'
 regions[footer_left]          = 'Footer Left'
-regions[footer_center_left]   = 'Footer Center Left'
-regions[footer_center_right]  = 'Footer Center Right'
+regions[footer_center_1]      = 'Footer Center Col 1'
+regions[footer_center_2]      = 'Footer Center Col 1'
+regions[footer_center_3]      = 'Footer Center Col 2'
+regions[footer_center_4]      = 'Footer Center Col 3'
 regions[footer_right]         = 'Footer Right'
 regions[page_top]             = 'Page top'
 regions[page_bottom]          = 'Page bottom'
@@ -38,3 +40,25 @@ stylesheets[all][] = css/global.css
 ;;;;;;;;;;;;;;;;;;;;;;
 
 scripts[] = js/script.min.js
+
+<footer class="footer">
+	<div class="container">
+		<div id="footer-left" class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+			<?php print render($page['footer_left']); ?>
+		</div>
+		<div class="footer-right col-lg-8 col-md-8 col-sm-12 col-xs-12">
+			<div id="footer-right-col-1" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<?php print render($page['footer_right_1']); ?>
+			</div>
+			<div id="ooter-right-col-2" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<?php print render($page['footer_right_2']); ?>
+			</div>
+			<div id="ooter-right-col-3" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<?php print render($page['footer_right_3']); ?>
+			</div>
+			<div id="ooter-right-col-4" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<?php print render($page['footer_right_4']); ?>
+			</div>
+		</div>
+	</div>
+</footer>

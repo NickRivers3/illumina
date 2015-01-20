@@ -16,17 +16,27 @@
 	// To understand behaviors, see https://drupal.org/node/756722#behaviors
 	Drupal.behaviors.my_custom_behavior = {
 		attach: function (context, settings) {
-			
-			
-			var windowHeight = $( window ).height();
-			$("").css({
-				"height": windowHeight + "px"
+			// windowSize Function
+			function windowSize() {
+				// set the height of the frontpage carousel
+				var windowWidth = $(window).width();
+				var windowHeight = $(window).height();
+				var imgHeight = $(".view-frontpage-carousel .slider-content .item.active .slide-image img").height();
+				var containers = $("#view-frontpage-carousel-slider, .view-frontpage-carousel .slider-content, .view-frontpage-carousel .carousel-inner, .view-frontpage-carousel .item");
+				// if windowWidth is greater than 1199px, 
+				// synchronize the height of the carousel and browser window
+				if (windowWidth > 1199) {
+					containers.css({"height": windowHeight + "px"});
+				}
+				// else, synchronize the height of the carousel and slide image
+				else {
+					containers.css({"height": imgHeight + "px"});
+				}
+			}
+			$(window).resize(function() {
+				windowSize();
 			});
-			$("#view-frontpage-carousel-slider, .view-frontpage-carousel .slider-content, .view-frontpage-carousel .carousel-inner, .view-frontpage-carousel .item").css({
-				"height": windowHeight + "px"
-			});
-			
-			
+			windowSize();
 			// hide header on scroll and show on scroll
 			var didScroll;
 			var lastScrollTop = 0;
@@ -65,6 +75,7 @@
 			$('#views-bootstrap-carousel-1').on('slid.bs.carousel', function () {
 				frontpageCarousel();
 			});
+			
 			function frontpageCarousel() {
 				var slide = $("#views-bootstrap-carousel-1 .carousel-inner .item");
 				var slideActive = $("#views-bootstrap-carousel-1 .carousel-inner .item.active");
@@ -89,6 +100,76 @@
 				$('#views-bootstrap-carousel-1').carousel(3);
 				frontpageCarousel();
 			});
+			
+			// client slider 
+			function clientSlider() {
+				var content = $("#companies-content .view-content").width();
+				var contentWidth = content / 5;
+				
+				var width = contentWidth;
+				var size = $("#companies-content .view-content .client").size();
+				var dimensions = width * size;
+				var speed = 10000;
+				var run = setInterval(function() {rotate();}, speed);
+						
+				// move the last list item before the first item.
+				$("#companies-content .view-content .client").css({
+					"width" : contentWidth+"px",
+				});
+				$("#companies-content .view-content").css({
+					"left" : "-"+width+"px",
+					"width" : dimensions+"px",
+				});
+				$("#companies-content .view-content .client:first").before($("#companies-content .view-content .client:last"));
+				
+				// when the user clicks the bttn for sliding right
+				$(".slider-nav .next").click(function() {
+					// get the width of the items
+					var item_width = $("#companies-content .view-content .client").outerWidth();
+					// calculate the new left indent of the unordered list
+					var left_indent = parseInt($("#companies-content .view-content").css("left")) - item_width;
+					// make the sliding effect using jquery animate
+					$("#companies-content .view-content:not(:animated)").animate({
+						left : left_indent
+					},500, function() {
+						// get the first list item and put it after the last list item
+						$("#companies-content .view-content .client:last").after($("#companies-content .view-content .client:first"));
+						// and get the left indent to the default -700px
+						$("#companies-content .view-content").css({"left" : "-"+width+"px"});
+					});
+				});
+				// when the user clicks the bttn for sliding left
+				$(".slider-nav .prev").click(function() {
+					// get the width of the items
+					var item_width = $("#companies-content .view-content .client").outerWidth();
+					// calculate the new left indent of the unordered list
+					var left_indent = parseInt($("#companies-content .view-content").css("left")) + item_width;
+					// make the sliding effect using jquery animate
+					$("#companies-content .view-content:not(:animated)").animate({
+						left : left_indent
+					},500, function() {
+						// get the fist list item and put it after the last list item
+						$("#companies-content .view-content .client:first").before($("#companies-content .view-content .client:last"));
+						// and get the left indent to the default -700px
+						$("#companies-content .view-content").css({"left" : "-"+width+"px"});
+					});
+				});
+				// if mouse hover, pause the auto rotation, otherwise rotate it
+				$('.client, .slider-nav .next, .slider-nav .prev').hover(
+					function() {
+						clearInterval(run);
+					}, function() {
+						run = setInterval(function() {
+							rotate();
+						}, speed);
+					}
+				);
+			}
+			function rotate() {
+				$('.slider-nav .next').click();
+			}
+			clientSlider();
+
 		}
 	};
 })(jQuery, Drupal, this, this.document);

@@ -11,5 +11,7 @@
 	<h3><?php print $title; ?></h3>
 <?php endif; ?>
 <?php foreach ($rows as $id => $row): ?>
-	<?php print $row; ?>
+	<div class="action row">
+		<?php print $row; ?>
+	</div>
 <?php endforeach; ?>

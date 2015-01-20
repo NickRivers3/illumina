@@ -47,14 +47,14 @@ function illumina_preprocess_page(&$variables, $hook) {
 	}
 	$variables['navbar_classes_array'] = array(
 		'navbar',
-		'col-lg-8 col-md-8 col-sm-6 col-xs-12',
+		'col-lg-7 col-md-7 col-sm-7 col-xs-12',
 	
 	);
 	if (theme_get_setting('bootstrap_navbar_position') !== '') {
 		$variables['navbar_classes_array'][] = 'navbar-' . theme_get_setting('bootstrap_navbar_position');
 	}
 	else {
-		$variables['navbar_classes_array'][] = 'container';
+		$variables['navbar_classes_array'][] = '';
 	}
 	if (theme_get_setting('bootstrap_navbar_inverse')) {
 		$variables['navbar_classes_array'][] = 'navbar-inverse';
@@ -79,10 +79,10 @@ function illumina_process_page(&$variables) {
 * Global
 */
 function illumina_menu_link(array $variables){
-	
-	// Remove caret from dropdown menu parent.
+// Prevent dropdown menu's parent a from being clickable.
 	$element = $variables['element'];
 	$sub_menu = '';
+
 	if ($element['#below']) {
 		// Prevent dropdown functions from being added to management menu so it
 		// does not affect the navbar module.
@@ -100,10 +100,16 @@ function illumina_menu_link(array $variables){
 
 			// Set dropdown trigger element to # to prevent inadvertant page loading
 			// when a submenu link is clicked.
-			$element['#localized_options']['attributes']['data-target'] = '#';
+			//$element['#localized_options']['attributes']['data-target'] = '#';
 			$element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
-			$element['#localized_options']['attributes']['data-toggle'] = 'dropdown';
+			//$element['#localized_options']['attributes']['data-toggle'] = 'dropdown';
 		}
+	}
+	// Add unique ids to top level li items
+	if ($element['#original_link']['depth'] == 1) {
+		// Add IDs to links
+		static $link_id = 0;
+		$element['#attributes']['class'][] = 'link-'. (++$link_id);
 	}
 	
 	// On primary navigation menu, class 'active' is not set on active menu item.
@@ -111,6 +117,7 @@ function illumina_menu_link(array $variables){
 	if (($element['#href'] == $_GET['q'] || ($element['#href'] == '<front>' && drupal_is_front_page())) && (empty($element['#localized_options']['language']))) {
 		$element['#attributes']['class'][] = 'active';
 	}
+	
 	$output = l($element['#title'], $element['#href'], $element['#localized_options']);
 	return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }

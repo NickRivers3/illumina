@@ -84,7 +84,7 @@
 		</div>
 	<?php //endif; ?>-->
 	<div id="header-main" class="container">
-		<div id="branding" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+		<div id="branding" class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 			<?php if ($logo): ?>
 				<a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
 					<img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
@@ -211,16 +211,35 @@
 
 <footer class="footer">
 	<div class="container">
-		<div id="footer-l" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="row flush">
+			<div class="footer-branding">
+				<a class="logo-bw" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+					<img src="<?php print $base_path; print $directory; ?>/images/logo_bw.png" alt="<?php print t('Home'); ?>" />
+				</a>
+				<a class="name pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+					<span class="site-name pull-left"><?php print $site_name; ?></span>
+					<span class="site-slogan pull-left"><?php print $site_slogan; ?></span></a>
+				</a>
+			</div>
+		</div>
+		<div id="footer-left" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 			<?php print render($page['footer_left']); ?>
 		</div>
-		<div id="footer-c-l" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-			<?php print render($page['footer_center_left']); ?>
+		<div class="footer-center col-lg-8 col-md-8 col-sm-12 col-xs-12">
+			<div id="footer-center-col-1" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<?php print render($page['footer_center_1']); ?>
+			</div>
+			<div id="ooter-center-col-2" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<?php print render($page['footer_center_2']); ?>
+			</div>
+			<div id="ooter-center-col-3" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<?php print render($page['footer_center_3']); ?>
+			</div>
+			<div id="ooter-center-col-4" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<?php print render($page['footer_center_4']); ?>
+			</div>
 		</div>
-		<div id="footer-c-r" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-			<?php print render($page['footer_center_right']); ?>
-		</div>
-		<div id="footer-r" class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+		<div id="footer-right" class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
 			<?php print render($page['footer_right']); ?>
 		</div>
 	</div>

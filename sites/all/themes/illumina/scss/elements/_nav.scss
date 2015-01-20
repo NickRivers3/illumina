@@ -31,6 +31,7 @@ li.dropdown:hover > .dropdown-menu {
 	border:0;
 	box-shadow:none;
 	border-radius:0;
+	z-index:0;
 	> li > a {}
 	> li > a:hover,
 	> li > a:focus,
@@ -55,12 +56,10 @@ li.dropdown:hover > .dropdown-menu {
 		float:right;
 	}
 	nav.pull-right {float:none!important;}
-	.nav > li {
-	
-	}
+	.nav > li {}
 	.nav {
 		> li {
-			padding:22px 30px;
+			padding:15px 30px;
 			> a {
 				font-size:20px;
 				line-height:20px;
@@ -78,8 +77,11 @@ li.dropdown:hover > .dropdown-menu {
 			}
 			&:hover,
 			&:focus,
-			&:active {
-			
+			&:active {}
+			&.active a,
+			&.active-trail a {
+				background-color:transparent;
+				font-weight:$bold;
 			}
 		}
 	}
@@ -98,7 +100,7 @@ li.dropdown:hover > .dropdown-menu {
 			> a {
 				padding-left:10px;
 				padding-right:10px;
-		
+				
 				&:focus,
 				&:hover {}
 				&:active {}
@@ -113,7 +115,7 @@ li.dropdown:hover > .dropdown-menu {
 		> li {
 			> a {
 				padding:0px;
-				display:inline-block;
+				display:block;
 				color:#333;
 				&:focus,
 				&:hover {
@@ -133,12 +135,29 @@ li.dropdown:hover > .dropdown-menu {
 		> li {
 			> a {
 				padding:0px;
-				display:inline-block;
+				display:block;
+				white-space:normal;
+				&:hover, 
+				&:focus,
+				&:active {
+					background-color:transparent;
+					color: #555;
+				}
 			}
 		}
 	}
+	.dropdown-menu > .active > a, 
+	.dropdown-menu > .active > a:hover, 
+	.dropdown-menu > .active > a:focus {
+		background-color:transparent;
+		color:inherit;
+	}
 }
-
+.nav .open > a, 
+.nav .open > a:hover, 
+.nav .open > a:focus {
+	background-color:$blue;
+}
 // .navbar-toggle
 .navbar-default button.navbar-toggle {
 	float: left;
@@ -187,18 +206,21 @@ li.dropdown:hover > .dropdown-menu {
 // .read-more
 .read-more {
 	margin:10px 0px;
-	a, a.views-more-link {
+	a, 
+	a.views-more-link {
 		font-family:$fontCondensed;
 		display:block;
 		text-transform: uppercase;
-		font-size: 12px;
-		line-height: 12px;
+		font-size: 16px;
+		line-height: 16px;
 		text-decoration:none;
-		
+		color:$orange;
 		&:after {
-			content:"\25b6";
+			content:"\bb";
 			position:absolute;
-			margin: 0px 0px 0px 2px;
+			margin: 0px 0px 0px 5px;
+			font-size: 24px;
+			line-height: 14px;
 		}
 	}
 }
@@ -206,13 +228,100 @@ li.dropdown:hover > .dropdown-menu {
 // h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7 a,
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	text-decoration:none;
-	color:#777;
+	color:inherit;
 	
 	&:hover,
 	&:focus {
 		text-decoration:none;
 		color:#333;
 	}
+}
+.footer {
+	.block-menu {
+		.dropdown-menu {
+			padding:0px;
+			> li {
+				margin:5px 0px;
+			}
+		}
+		.nav > li > a {
+			font-weight:$bold;
+		}
+		li {
+			margin:5px 0px;
+		}
+		a {
+			display:block;
+			background-color:transparent;
+			white-space:normal;
+			font-size: 14px;
+			line-height: 14px;
+		}
+		.dropdown-menu > li > a:hover, 
+		.dropdown-menu > li > a:focus {
+			background-color:transparent;
+		}
+	}
+}
+
+// .primary-sidebar 
+#primary-sidebar {
+	.block-menu {
+		padding:100px 0px 100px 100px;
+		ul.menu {
+			> li {
+				padding:0px;
+				margin:0px;
+				> a {
+					color:$white;
+					font-size:16px;
+					line-height:20px;
+					padding:10px 10px 10px 10px;
+					border-bottom:1px solid $white;
+				}
+				> ul.dropdown-menu {
+					padding:0px;
+					margin:0px;
+					> li {
+						padding:0px;
+						margin:0px;
+						display:block;
+						position:relative;
+						> a {
+							color:$white;
+							font-size:16px;
+							line-height:20px;
+							padding:10px 10px 10px 10px;
+							border-bottom:1px solid $white;
+						}
+					}
+				}
+				
+				&.active {
+					> a {
+						padding-left:20px;
+						font-weight:$bold;
+						background-color:$blue;
+					}
+				}
+			}
+		}
+	}
+	a:hover, 
+	a:focus,
+	a:active {
+		background-color:$blue;
+	}
+	.dropdown-menu > .active > a, 
+	.dropdown-menu > .active > a:hover, 
+	.dropdown-menu > .active > a:focus {
+		background-color:$blue;
+	}
+}
+
+// .nav-tabs
+.nav-tabs {
+	margin:10px 0px;
 }
 
 
@@ -242,6 +351,22 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 }
 
+// Large Desktop
+// min-width: 1200px;
+@media (max-width: 1199px) {
+	#primary-nav {
+		.nav {
+			> li {
+				padding:15px 22px;
+			}
+		}
+	}
+}
+@media (max-width: 992px) {
+	#primary-nav .nav > li {
+		padding: 15px 10px;
+	}
+}
 // Print
 @media print {
 
