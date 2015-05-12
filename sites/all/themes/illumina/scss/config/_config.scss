@@ -33,6 +33,13 @@ $transDark:rgba(255,255,255,.8);
 	    -ms-border-radius: $radius;
 	        border-radius: $radius;
 }
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	   -moz-transition: $transition;
+	     -o-transition: $transition;
+	    -ms-transition: $transition;
+	        transition: $transition;
+}
 // Box Shadow
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
 	@if $inset {

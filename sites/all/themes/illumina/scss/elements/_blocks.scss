@@ -1,0 +1,68 @@
+/*
+ * Blocks
+*/
+
+// .block
+.block {
+	margin:0px;
+	@media screen and (max-width: 767px) {margin:0px!important;}
+	&:before {
+		display:table;
+		content:" ";
+	}
+	&:after {
+		clear: both;
+		display:table;
+		content:" ";
+	}
+}
+
+// .block-facetapi
+.block-facetapi {
+	margin-bottom:10px!important;
+	h2.block-title {
+		font-size:16px;
+		line-height:20px;
+		font-weight:$bold;
+		color:white;
+	}
+	ul.facetapi-facetapi-checkbox-links {
+		list-style:none;
+		margin:0px;
+		padding:0px;
+		li {
+			float:left;
+			width:100%;
+			padding-left:30px;
+			margin-bottom:10px;
+			font-size:16px;
+			line-height:20px;
+			color:white;
+			label {
+				margin:0px;
+			}
+			input[type='checkbox'] {
+				float: left;
+				display:inline;
+				margin:4px 0px 0px -20px!important;
+				vertical-align:middle;
+			}
+			a {
+				display:inline;
+				float:left;
+				font-size:16px;
+				line-height:20px;
+				color:white;
+				text-decoration:none;
+				&:hover,
+				&:focus {
+					color:$gold;
+					text-decoration:none;
+				}
+			}
+			.facetapi-checkbox {
+				margin:0px;
+			}
+		}
+	}
+}

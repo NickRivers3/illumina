@@ -24,11 +24,14 @@
  * @ingroup views_templates
  */
 ?>
-<div class="slide-image">
-	<?php print $fields['field_slide_image']->content; ?>
-</div>
-<div class="slide-title-container">
-	<h2 class="slide-title">
-		<?php print $fields['title']->content; ?>
-	</h2>
+<div class="parallax slide-<?php print $fields['nid']->content; ?>"
+	data-center="background-position:50% 0px;"
+	data-top-bottom="background-position:50% -100px"
+	data-anchor-target="#section-1"
+>
+	<div class="slide-title-container">
+		<h2 class="slide-title">
+			<?php print $fields['title']->content; ?>
+		</h2>
+	</div>
 </div>

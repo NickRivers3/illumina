@@ -47,6 +47,23 @@ li.dropdown:hover > .dropdown-menu {
 	border:0;
 	margin-bottom:0px;
 	background-color:transparent;
+	@media screen and (max-width: 767px) {
+		min-height:inherit;
+		height:inherit;
+		min-height:inherit;
+		width:100%;
+		background-color:$orange;
+		background-color:$gold;
+	}
+	@media screen and  (max-width: 550px) {
+		.navbar-collapse {
+			width:100%;
+			text-align:left;
+			li {
+				padding:10px;
+			}
+		}
+	}
 	.navbar-collapse,
 	.navbar-form {
 		padding-left:0px;
@@ -68,8 +85,9 @@ li.dropdown:hover > .dropdown-menu {
 				padding:0px;
 				&:focus,
 				&:active,
-				&:hover {
-					color:$black;
+				&:hover {color:$black;}
+				@media screen and (max-width: 768px) {
+					font-size:18px;
 				}
 			}
 			&.last {
@@ -160,7 +178,8 @@ li.dropdown:hover > .dropdown-menu {
 }
 // .navbar-toggle
 .navbar-default button.navbar-toggle {
-	float: left;
+	position:absolute;
+	float: none;
 	border-color: transparent;
 	padding: 0px 20px;
 	margin: 0px;
@@ -169,6 +188,9 @@ li.dropdown:hover > .dropdown-menu {
 	width: 100%;
 	border-radius: 0;
 	border: 0;
+	width:auto;
+	top:-65px;
+	right:0px;
 	
 	.menu-title {
 		float: left;
@@ -189,7 +211,7 @@ li.dropdown:hover > .dropdown-menu {
 // .nav-tabs
 .nav-tabs-container {
 	margin-bottom: 20px;
-	
+	@media screen and  (max-width: 767px) {margin:0px;}
 	ul.nav-tabs {
 		li {
 			a {}
@@ -217,11 +239,37 @@ li.dropdown:hover > .dropdown-menu {
 		color:$orange;
 		&:after {
 			content:"\bb";
-			position:absolute;
+			position:relative;
 			margin: 0px 0px 0px 5px;
-			font-size: 24px;
-			line-height: 14px;
+			font-size: 20px;
+			line-height: 0px;
+			text-decoration:none;
 		}
+	}
+	a:hover, a:focus {
+		color: $gold;
+		text-decoration: none;
+	}
+}
+.views-more-link {
+	font-family:$fontCondensed;
+	text-transform: uppercase;
+	font-size: 16px;
+	line-height: 16px;
+	text-decoration:none;
+	color:$orange;
+	&:after {
+		content:"\bb";
+		position:relative;
+		margin: 0px 0px 0px 5px;
+		font-size: 20px;
+		line-height: 0px;
+		text-decoration:none;
+	}
+	&:hover,
+	&:focus {
+		color: $gold;
+		text-decoration: none;
 	}
 }
 
@@ -233,7 +281,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	&:hover,
 	&:focus {
 		text-decoration:none;
-		color:#333;
+		color:$gold;
 	}
 }
 .footer {
@@ -242,10 +290,18 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			padding:0px;
 			> li {
 				margin:5px 0px;
+				a {
+					@media screen and (max-width: 768px) {
+						display:inline;
+					}
+				}
 			}
 		}
 		.nav > li > a {
 			font-weight:$bold;
+			@media screen and (max-width: 768px) {
+				display:inline;
+			}
 		}
 		li {
 			margin:5px 0px;
@@ -256,6 +312,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			white-space:normal;
 			font-size: 14px;
 			line-height: 14px;
+
 		}
 		.dropdown-menu > li > a:hover, 
 		.dropdown-menu > li > a:focus {
@@ -267,7 +324,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 // .primary-sidebar 
 #primary-sidebar {
 	.block-menu {
-		padding:100px 0px 100px 100px;
+		margin-right:-15px;
 		ul.menu {
 			> li {
 				padding:0px;
@@ -278,6 +335,8 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 					line-height:20px;
 					padding:10px 10px 10px 10px;
 					border-bottom:1px solid $white;
+					@media screen and (max-width: 768px) {min-height: 42px;}
+					@media screen and (max-width: 767px) {}
 				}
 				> ul.dropdown-menu {
 					padding:0px;
@@ -293,15 +352,16 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 							line-height:20px;
 							padding:10px 10px 10px 10px;
 							border-bottom:1px solid $white;
+							@media screen and (max-width: 767px) {}
 						}
 					}
 				}
 				
 				&.active {
 					> a {
-						padding-left:20px;
 						font-weight:$bold;
-						background-color:$blue;
+						background-color:transparent;
+						border-right: 5px solid #fff;
 					}
 				}
 			}
@@ -310,12 +370,24 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	a:hover, 
 	a:focus,
 	a:active {
-		background-color:$blue;
+		background-color:transparent;
 	}
+	a.btn {
+		background-color:$orange;
+		border-color:$gold;
+	}
+	a.btn:hover,
+	a.btn:focus,
+	a.btn:active {
+		background-color:$gold;
+	}
+	.dropdown-menu > .active-trail > a, 
 	.dropdown-menu > .active > a, 
 	.dropdown-menu > .active > a:hover, 
 	.dropdown-menu > .active > a:focus {
-		background-color:$blue;
+		font-weight:$bold;
+		background-color:transparent;
+		border-right: 5px solid #fff;
 	}
 }
 
@@ -324,36 +396,76 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	margin:10px 0px;
 }
 
+// .pagination 
+ul.pagination {
+	> li {
+		> a,
+		> span {
+			position: relative;
+			float: left;
+			padding: 6px 12px;
+			margin-left: -1px;
+			line-height: 1.42857143;
+			color: $orange;
+			text-decoration: none;
+			background-color: #fff;
+			border: 1px solid $gold;
+		}
+		> a:hover,
+		> a:focus,
+		> span:hover,
+		> span:focus {
+			color: white;
+			background-color: $orange;
+			border-color: $gold;
+		}
+	}
+	> .active {
+		> a,
+		> span,
+		> a:hover,
+		> span:hover,
+		> a:focus,
+		> span:focus {
+			z-index: 2;
+			color: #fff;
+			cursor: default;
+			background-color: $orange;
+			border-color: $gold;
+		}
+	}
+}
+
 
 // Media Queries //////////
 
 // Mobile 
 // max-width: 767px;
-@media (max-width: 767px) {
+@media screen and  (max-width: 767px) {
 
 }
 
 // Tablet Portrait 
 // min-width: 768px; and max-width: 991px;
-@media (min-width: 768px) and (max-width: 991px) {
+@media screen and  (min-width: 768px) and (max-width: 991px) {
 
 }
 
 // Tablet Landscape / Medium Desktop
 // min-width: 992px; and max-width: 1199px;
-@media (min-width: 992px) and (max-width: 1199px) {
+@media screen and  (min-width: 992px) and (max-width: 1199px) {
 
 }
 
 // Large Desktop
 // min-width: 1200px;
-@media (min-width: 1200px) {
+@media screen and  (min-width: 1200px) {
 
 }
 
 // Large Desktop
 // min-width: 1200px;
-@media (max-width: 1199px) {
+@media screen and  (max-width: 1199px) {
 	#primary-nav {
 		.nav {
 			> li {
@@ -362,11 +474,13 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 		}
 	}
 }
-@media (max-width: 992px) {
+@media screen and  (max-width: 992px) {
 	#primary-nav .nav > li {
 		padding: 15px 10px;
 	}
 }
+
+
 // Print
 @media print {
 

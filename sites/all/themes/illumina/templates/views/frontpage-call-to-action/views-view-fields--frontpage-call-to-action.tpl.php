@@ -22,11 +22,11 @@
  * the view is modified.
  */
 ?>
-<div class="action-icon col-lg-1 col-md-1 col-sm-12 col-xs-12">
+<div class="action-icon col-lg-1 col-md-1 col-sm-2 col-xs-3">
 	<?php print $fields['field_action_icon']->content; ?>
 </div>
 
-<div class="action-content col-lg-11 col-md-11 col-sm-12 col-xs-12">
+<div class="action-content col-lg-11 col-md-11 col-sm-10 col-xs-9">
 	<h5 class="action-title nid-<?php print $fields['nid']->content; ?>">
 		<?php print $fields['title']->content; ?>
 	</h5>

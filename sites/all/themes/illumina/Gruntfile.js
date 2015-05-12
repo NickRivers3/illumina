@@ -10,6 +10,7 @@ module.exports = function(grunt) {
 					'libraries/jquery-migrate/jquery-migrate-1.2.1.min.js', // jQuery Migrate
 					'libraries/bootstrap/js/bootstrap.js', // Bootstrap 
 					'libraries/bootstrap-accessibility/bootstrap-accessibility.min.js', // Bootstrap Accessibility
+					'libraries/skrollr-master/src/skrollr.js', // Skroll Master
 					'js/dev.js'  // Main Script
 				],
 				dest: 'js/script.js',

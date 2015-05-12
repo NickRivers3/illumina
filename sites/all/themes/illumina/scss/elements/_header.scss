@@ -9,19 +9,28 @@
 	width: 100%;
 	height: 80px;
 	background-color:$white;
+	background-color:$transDark;
 	@include box-shadow(0, 3px, 5px, rgba(0, 0, 0, .175));
 	transition: top 0.2s ease-in-out;
+	@media screen and (max-width: 767px) {position:relative;}
+	
 	#header-main {
 		padding:15px 0px;
+		@media screen and (max-width: 736px) {padding-top:0px;padding-bottom:0px;}
 		#branding {
+			@media screen and (max-width: 736px) {padding:15px;}
 			.logo {
 				display: inline-block;
 				text-decoration:none;
+				@media screen and (max-width: 768px) {margin-top:5px;}
+				@media screen and (max-width: 767px) {margin-top:0px;}
 				img {
 					vertical-align:bottom;
 					border:0;
 					width:50px;
 					height:50px;
+					@media screen and (max-width: 768px) {width:30px;height:30px;}
+					@media screen and (max-width: 767px) {width:50px;height:50px;}
 				}
 			}
 			.name {
@@ -31,12 +40,21 @@
 				text-decoration:none;
 				color: $black;
 				margin:3px 0px 2px 10px;
+				@media screen and (max-width: 1199px) {width:150px;}
+				@media screen and (max-width: 992px) and (min-width:768px) {
+					.site-name {font-size:22px;line-height:22px;}
+					.site-slogan {font-size:12px;line-height:13px;}
+				}
+				@media screen and (max-width: 768px) {width:120px;margin-left:5px;}
+				@media screen and (max-width: 767px) {width:200px;margin:0;padding: 0px 10px;}
 				.site-name {
 					font-size:30px;
 					line-height:30px;
 					font-weight:$bold;
 					color:inherit;
 					display:block;
+					@media screen and (max-width: 1199px) {font-size:28px;line-height:28px;}
+					@media screen and (max-width: 767px) {font-size: 30px;line-height: 30px;}
 				}
 				.site-slogan {
 					font-size:15px;
@@ -45,53 +63,15 @@
 					text-transform:uppercase;
 					color:inherit;
 					display:block;
+					@media screen and (max-width: 1199px) {font-size:13px;line-height:13px;}
+					@media screen and (max-width: 768px) {font-size:11px;line-height:11px;}
+					@media screen and (max-width: 767px) {font-size:15px;line-height:15px;}
 				}
 			}
 		}
 	}
-	&.nav-up {
-		top: -100px;
-	}
+	&.nav-up {top: -100px;}
 }
 .admin-menu #header {
 	top:21px;
-}
-
-// Media Queries //////////
-
-// Mobile 
-// max-width: 767px;
-@media (max-width: 767px) {
-
-}
-
-// Tablet Portrait 
-// min-width: 768px; and max-width: 991px;
-@media (min-width: 768px) and (max-width: 991px) {
-
-}
-
-// Tablet Landscape / Medium Desktop
-// min-width: 992px; and max-width: 1199px;
-@media (min-width: 992px) and (max-width: 1199px) {
-
-}
-
-// Large Desktop
-// min-width: 1200px;
-@media (max-width: 992px) {
-	#header #header-main #branding .logo img {}
-	#header #header-main #branding .name {}
-	#header #header-main #branding .name .site-name {}
-	#header #header-main #branding .name .site-slogan {}
-}
-// Large Desktop
-// min-width: 1200px;
-@media (min-width: 1200px) {
-
-}
-
-// Print
-@media print {
-
 }

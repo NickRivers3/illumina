@@ -47,7 +47,7 @@ function illumina_preprocess_page(&$variables, $hook) {
 	}
 	$variables['navbar_classes_array'] = array(
 		'navbar',
-		'col-lg-7 col-md-7 col-sm-7 col-xs-12',
+		'col-lg-7 col-md-9 col-sm-8 col-xs-12',
 	
 	);
 	if (theme_get_setting('bootstrap_navbar_position') !== '') {
@@ -70,9 +70,37 @@ function illumina_preprocess_page(&$variables, $hook) {
  * @see page.tpl.php
  */
 function illumina_process_page(&$variables) {
-  $variables['navbar_classes'] = implode(' ', $variables['navbar_classes_array']);
+	$variables['navbar_classes'] = implode(' ', $variables['navbar_classes_array']);
 }
 
+/**
+ * Implements dentaquest_dqi_preprocess_page().
+ *
+ */
+function dentaquest_dqi_preprocess_page(&$vars) {
+	// custom content type page template
+	// Renders a new page template to the list of templates used if it exists
+	if (isset($vars['node']->type)) {
+		// This code looks for any page--custom_content_type.tpl.php page
+		$vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
+	}
+	$cpath = current_path();
+	// dsm($cpath);
+	if (strpos($cpath,'ashboard') || strpos($cpath,'ractice-metrics')) {
+		drupal_add_js(drupal_get_path('module', 'dentaquest_charts') . '/dashboard.js');
+	}
+	// Move this code to module when ready
+	$vars['module_name'] = '';
+	// Get the object and do some other checks based on what you need.
+	if (($node = menu_get_object()) && $node->type) {
+		// Generate a render array for the node.
+		$view = node_view($node);
+		// "Create" a new variable for the page.tpl.php.
+		// This will expose $VAR_NAME in the page template.
+		// You will most likely have to clear your cache.
+		$vars['module_name'] = drupal_render($view['field_module_name']);
+	}
+}
 
 /**
 * illumina_menu_link()
@@ -229,5 +257,14 @@ function illumina_preprocess_node(&$variables, $hook) {
 			if (variable_get('node_submitted_' . $variables['node']->type, TRUE)) {
 				$variables['submitted'] = t('Submitted by !username on !datetime', array('!username' => $variables['name'], '!datetime' => date("l, F j, Y", $variables['created'])));
 			}
+	}
+}
+
+function illumina_form_alter( &$form, &$form_state, $form_id ){
+	if (strstr($form_id, 'webform_client_form')) {
+		$form['my_captcha_element'] = array(
+			'#type' => 'captcha',
+			'#captcha_type' => 'image_captcha/Image',
+		);
 	}
 }

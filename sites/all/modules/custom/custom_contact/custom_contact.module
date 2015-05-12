@@ -1,0 +1,124 @@
+<?php 
+/**
+ * @file
+ * A module that adds fields to the contact form.
+ */
+ 
+function custom_contact_form_contact_site_form_alter(&$form, &$form_state, &$form_id) {
+	$form['name'] = array(
+		'#title' => t('Name'),
+		'#type' => 'textfield',
+		'#required' => TRUE,
+	);
+	$form['title'] = array(
+		'#title' => t('Title'),
+		'#type' => 'textfield',
+		'#required' => TRUE,
+	);
+	$form['company'] = array(
+		'#title' => t('Company'),
+		'#type' => 'textfield',
+		'#required' => TRUE,
+	);
+	$form['address'] = array(
+		'#title' => t('Address'),
+		'#type' => 'textfield',
+		'#required' => TRUE,
+	);
+	$form['city'] = array(
+		'#title' => t('City'),
+		'#type' => 'textfield',
+		'#required' => TRUE,
+	);
+	$form['state'] = array(
+		'#title' => t('State'),
+		'#type' => 'textfield',
+		'#required' => TRUE,
+	);
+	$form['zip'] = array(
+		'#title' => t('Zip'),
+		'#type' => 'textfield',
+		'#required' => TRUE,
+	);
+	$form['phone'] = array(
+		'#title' => t('Phone'),
+		'#type' => 'textfield',
+		'#required' => TRUE,
+		'#element_validate' => array('custom_contact_phone_validate'),
+	);
+
+	$order = array(
+		'name',
+		'title',
+		'company',
+		'address',
+		'city',
+		'state',
+		'zip',
+		'phone',
+		'mail',
+		'subject',
+		'cid',
+		'message',
+		'copy',
+		'submit'
+	);
+	foreach ($order as $key => $field) {
+		// Set/Reset the field's 
+		// weight to the array key value
+		// from our order array. 
+		$form[$field]['#weight'] = $key;
+	}
+}
+
+function custom_contact_phone_validate($element, &$form_state) {
+	if (empty($element['#value'])) {
+		form_error($element, t('Please provide a phone number.'));
+	}
+}
+
+
+/**
+ * Implements hook_mail_alter().
+ */
+function custom_contact_mail_alter(&$message) {
+	if ($message['id'] == 'contact_page_mail') {
+	
+		$name =  $message['params']['name'];
+		$title =  $message['params']['title'];
+		$company =  $message['params']['company'];
+		$address =  $message['params']['address'];
+		$city =  $message['params']['city'];
+		$state =  $message['params']['state'];
+		$zip =  $message['params']['zip'];
+		$phone =  $message['params']['phone'];
+		$mail =  $message['params']['mail'];
+		$subject =  $message['params']['subject'];
+		$cid =  $message['params']['cid'];
+		$message =  $message['params']['message'];
+		$copy =  $message['params']['copy'];
+		
+		$message['body'] = array();
+		$message['body'][] = t("Name:");
+		$message['body'][] = $name;
+		
+		
+		$message['body'][] = t("Title:");
+		$message['body'][] = $title;
+		
+		$message['body'][] = t("Company:");
+		$message['body'][] = $company;
+		
+		$message['body'][] = t("Address:");
+		$message['body'][] = $adress;
+		$message['body'][] = $city;
+		$message['body'][] = $state;
+		$message['body'][] = $zip;
+		
+		$message['body'][] = t("Subject:");
+		$message['body'][] = $subject;
+		
+		$message['body'][] = t("Message:");
+		$message['body'][] = $message;
+  }
+}

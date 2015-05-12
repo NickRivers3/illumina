@@ -33,9 +33,6 @@
 <?php endif; ?>
 
 <?php if (!empty($fields['body'])): ?>
-	<div class="body teaser"><?php print $fields['body']->content; ?></div>
+	<div class="body teaser"><?php print $fields['body']->content; ?><a href="<?php print $fields['path']->content; ?>" class="views-more-link"> Read more</a></div>
 <?php endif; ?>
 
-<?php if (!empty($fields['view_node'])): ?>
-	<div class="read-more"><?php print $fields['view_node']->content; ?></div>
-<?php endif; ?>

@@ -19,6 +19,21 @@
 	@extend .alert;
 }
 
+//.btn
+.btn-primary {
+	color: #fff;
+	background-color: $orange;
+	border-color: $gold;
+	&:hover, 
+	&:focus, 
+	&:active, 
+	&.active {
+		background-color: $gold;
+		border-color: $orange;
+	}
+}
+
+
 // .image
 .image {}
 .image.circle {
@@ -42,36 +57,22 @@
 	margin-bottom:20px;
 }
 
-
-// Media Queries //////////
-
-// Mobile 
-// max-width: 767px;
-@media (max-width: 767px) {
-
-}
-
-// Tablet Portrait 
-// min-width: 768px; and max-width: 991px;
-@media (min-width: 768px) and (max-width: 991px) {
-
-}
-
-// Tablet Landscape / Medium Desktop
-// min-width: 992px; and max-width: 1199px;
-@media (min-width: 992px) and (max-width: 1199px) {
-
-}
-
-// Large Desktop
-// min-width: 1200px;
-@media (min-width: 1200px) {
-	.image.circle {
-		max-width: 200px;
+// .node-webform {}
+.node-webform {
+	.webform-component {
+		margin-bottom:15px;
 	}
-}
-
-// Print
-@media print {
 
 }
+
+.element-invisible {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	overflow: hidden;
+	height: 0px;
+}
+
+.preload { opacity: 0; position: absolute; top: -9999px; left: -9999px; }
+
+legend.panel-heading {float:left;}

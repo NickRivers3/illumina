@@ -23,25 +23,26 @@
  *
  * @ingroup views_templates
  */
+ $URL = $fields['name']->content;
+ $URL = strtolower($URL);
+ $URL = preg_replace("/[^a-z0-9_\s-]/", "", $URL);
+ $URL = preg_replace("/[\s-]+/", " ", $URL);
+ $URL = preg_replace("/[\s_]/", "-", $URL);
 ?>
-<?php if (!empty($fields['picture'])): ?>
-	<div class="image user-image col-lg-4 col-md-4 col-sm-4 col-xs-12"><?php print $fields['picture']->content; ?></div>
-<?php endif; ?>
-
-<div class="user-content col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<div class='user-header'>
 	<?php if (!empty($fields['field_user_last_name'])): ?>
-		<h3 class="title"><?php print $fields['field_user_last_name']->content; ?></h3>
+		<h3 class="name"><?php print $fields['field_user_last_name']->content; ?></h3>
 	<?php endif; ?>
-
 	<?php if (!empty($fields['field_user_title'])): ?>
-		<div class="user-title"><?php print $fields['field_user_title']->content; ?></div>
+			<div class="title"><?php print $fields['field_user_title']->content; ?></div>
 	<?php endif; ?>
+</div>
 
+<div class='user-content'>
+	<?php if (!empty($fields['picture'])): ?>
+		<div class="image user-image pull-left"><?php print $fields['picture']->content; ?></div>
+	<?php endif; ?>
 	<?php if (!empty($fields['field_user_biography'])): ?>
-		<div class="body"><?php print $fields['field_user_biography']->content; ?></div>
-	<?php endif; ?>
-
-	<?php if (!empty($fields['view_user'])): ?>
-		<div class="read-more"><?php print $fields['view_user']->content; ?></div>
+		<div class="body"><?php print $fields['field_user_biography']->content; ?><a href="/about/our-team/<?php echo $URL; ?>" class="views-more-link"> Read more</a></div>
 	<?php endif; ?>
 </div>

@@ -1,0 +1,101 @@
+/*
+ * Nodes
+*/
+
+//.node-client {}
+
+.portfolio-header {
+	margin-bottom:20px;
+	margin-left:0px;
+	margin-right:0px;
+	.logo-container {
+		padding:0px;
+		.logo {
+			@media (min-width: 1200px) {}
+		}
+		img {width:100%;height:auto;}
+	}
+	.details {
+		h2 {
+			font-size:24px;
+			line-height:24px;
+		}
+	}
+}
+.portfolio-content {
+	margin-left:0px;
+	margin-right:0px;
+	.group-projects {
+		> div > span {
+			display:none;
+		}
+	}
+	> .field > .field-items > .field-item {
+		margin:30px 0px;
+		padding-bottom:30px;
+		border-bottom:2px dashed $orange;
+		&:last-child {
+			margin-bottom:0px;
+			padding-bottom:0px;
+			border:0;
+		}
+	}
+	.field-name-field-project-title {
+		margin:0px 0px 15px 0px;
+		.field-label {display:none;}
+		.field-item {
+			font-weight:$medium;
+			font-size:24px;
+			color:$orange;
+		}
+	}
+	.field-name-field-challenge-description {
+		margin:0px;
+		.field-label {
+			margin-top:0px;
+			margin-bottom:10px;
+			border-bottom:1px solid #ccc;
+			padding-bottom:10px;
+		}
+	}
+	.field-name-field-solution-description {
+		margin:0px;
+		.field-label {
+			margin-top:0px;
+			margin-bottom:10px;
+			border-bottom:1px solid #ccc;
+			padding-bottom:10px;
+		}
+	}
+	.field-name-field-portfolio-images {
+		margin:0px;
+		.field-label {display:none;}
+		.field-item {
+			a {
+				display:block;
+				border:1px solid #ccc;
+				&:hover {box-shadow: 0px 0px 5px $orange;}
+			}
+		}
+	}
+}
+#image-modal {
+	.modal-body img {
+		width:100%;
+		height:auto;
+	}
+}
+
+// .page-user
+.page-user {
+	.profile {
+		.user-picture {
+			float:left;
+			margin:0px 20px 20px 0px;
+			@media screen and (max-width: 480px) {float:none;margin:0px 0px 20px 0px;}
+		}
+		.field-name-field-user-title {
+			font-weight:$bold;
+		}
+	}
+}

@@ -24,6 +24,9 @@
  * @ingroup views_templates
  */
 ?>
+<?php if (!empty($fields['field_page_icon'])): ?>
+	<div class="icon"><?php print $fields['field_page_icon']->content; ?></div>
+<?php endif; ?>
 <?php if (!empty($fields['title'])): ?>
 	<h3 class="title"><?php print $fields['title']->content; ?></h3>
 <?php endif; ?>

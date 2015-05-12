@@ -21,9 +21,13 @@ body, h1, h2, h3, h4, h5, h6, p {
 }
 
 body {
-	font-size:20px;
-	line-height:35px;
+	font-size:18px;
+	line-height:32px;
 	font-weight:$light;
+	@media screen and (max-width: 1199px) {
+		font-size:16px;
+		line-height:22px;
+	}
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -31,17 +35,27 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1 {
-	font-size:50px;
-	line-height:50px;
+	font-size:48px;
+	line-height:48px;
 	font-weight:$light;
+	@media screen and (max-width: 1199px) {font-size:40px;line-height:40px;}
+	@media screen and (max-width: 767px) {font-size:24px;line-height:30px;}
 }
 h2 {
 	font-size:30px;
 	line-height:45px;
 	font-weight:$bold;
+	margin-top:0px;
+	@media screen and (max-width: 1199px) {font-size:20px;line-height:26px;}
+	@media screen and (max-width: 767px) {font-size:18px;line-height:24px;}
 }
 h3 {
+	font-size:18px;
+	line-height:32px;
 	font-weight:$bold;
+	color:$orange;
+	@media screen and (max-width: 1199px) {font-size:18px;line-height:24px;}
+	@media screen and (max-width: 767px) {font-size:16px;line-height:22px;}
 }
 h4 {
 	font-weight:$bold;
@@ -52,13 +66,26 @@ h5 {
 h6 {
 	font-weight:$bold;
 }
+.content {
+	ul {
+		li {margin-bottom:15px;}
+	}
+}
+
+// .page-header
+.page-header {
+	border:0;
+	margin-top:0px;
+	padding:0px;
+}
+.front .page-header {
+	text-align:center;
+	margin:0px;
+}
 
 // .title
 h2.title {}
-
-h3.title {
-	font-weight:$regular;
-}
+h3.title {}
 
 // .block-title 
 .block-title {
@@ -82,8 +109,10 @@ h3.title {
 // .date
 .date {
 	font-family:$fontCondensed;
-	font-size:14px;
-	line-height:14px;
+	font-size:16px;
+	line-height:16px;
+	color:$orange;
+	font-weight:$light;
 }
 
 // .user-title
@@ -99,32 +128,4 @@ h3.title {
 	font-size: 12px;
 	line-height: 14px;
 	font-style: italic;
-}
-
-
-
-
-// Media Queries //////////
-
-// Mobile 
-// max-width: 767px;
-@media (max-width: 767px) {}
-
-// Tablet Portrait 
-// min-width: 768px; and max-width: 991px;
-@media (min-width: 768px) and (max-width: 991px) {}
-
-// Tablet Landscape / Medium Desktop
-// min-width: 992px; and max-width: 1199px;
-@media (min-width: 992px) and (max-width: 1199px) {}
-
-@media(max-width:1024px) {}
-
-// Large Desktop
-// min-width: 1200px;
-@media (min-width: 1200px) {}
-
-// Print
-@media print {
-
 }
