@@ -87,6 +87,22 @@ $(document).ready(function () {
 	
 });
 
+/* 
+ * srSmoothscroll
+ * adds smooth scrolling with options
+ *
+*/
+$(function () {
+  $.srSmoothscroll({
+   // defaults
+    step: 100,
+    speed: 400,
+    ease: 'swing',
+    target: $('body'),
+    container: $(window)
+  });
+});
+
 
 /* 
  * $(window).scroll(function(event)
@@ -150,14 +166,16 @@ $(window).resize(function() {
  *
 */
 function windowSize() {
-	// if windowWidth is greater than 1199px, 
-	if (windowWidth > 1199) {
-		sklStart();
-	}
-	else if (windowWidth < 767) {
-		$('#reasons-content .carousel').carousel('pause');
-	}
-	else {}
+	front.exists(function() {
+		// if windowWidth is greater than 1199px, 
+		if (windowWidth > 1199) {
+			sklStart();
+		}
+		else if (windowWidth < 767) {
+			$('#reasons-content .carousel').carousel('pause');
+		}
+		else {}
+	});
 }
 
 
@@ -284,6 +302,7 @@ function rotate() {$('.slider-nav .next').click();}
 function sklStart() {
 	var s = skrollr.init({});
 	s.refresh($('.parallax'));
+	console.log("skrollr");
 }
 
 /*

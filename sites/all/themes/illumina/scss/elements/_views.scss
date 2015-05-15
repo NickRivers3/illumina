@@ -28,7 +28,7 @@
 		@media screen and (max-width: 550px) {
 			width:100%;
 			height:auto;
-			overflow:visible;
+			//overflow:visible;
 			position:relative;
 		}
 		.slide-title-container {
@@ -592,13 +592,11 @@
 	}
 	.view-client-list {
 		.thumbnail-col {
-			@media screen and (min-width: 768px) {height:100px;display:table;}
+			@media screen and (min-width: 768px) {}
 			.thumbnail {
 				border:0;
 				margin-bottom:0;
 				@media screen and (min-width: 768px) {
-					display:table-cell;
-					vertical-align:middle;
 				}
 				@media screen and (max-width: 767px) {
 					padding:15px 90px;

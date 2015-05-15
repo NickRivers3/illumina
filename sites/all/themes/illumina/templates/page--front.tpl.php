@@ -76,7 +76,6 @@
 						data-center-top="opacity:1"
 						data-center="opacity:1"
 						data-center-bottom="opacity:1"
-						data-top-bottom="opacity:0"
 						data-anchor-target="#mission-content"
 					>
 						<a id="main-content"></a>
@@ -119,7 +118,6 @@
 							data-center-top="opacity:1"
 							data-center="opacity:1"
 							data-center-bottom="opacity:1"
-							data-top-bottom="opacity:0"
 							data-anchor-target="#reasons-content"
 						>
 							<?php print render($page['frontpage_reasons']); ?>
@@ -159,7 +157,6 @@
 							data-center-top="opacity:1"
 							data-center="opacity:1"
 							data-center-bottom="opacity:1"
-							data-top-bottom="opacity:0"
 							data-anchor-target="#services-content"
 						>
 							<?php print render($page['frontpage_services']); ?>
@@ -185,7 +182,6 @@
 							ata-center-top="opacity:1"
 							data-center="opacity:1"
 							data-center-bottom="opacity:1"
-							data-top-bottom="opacity:0"
 							data-anchor-target="#actions-content"
 						>
 							<?php print render($page['frontpage_actions']); ?>

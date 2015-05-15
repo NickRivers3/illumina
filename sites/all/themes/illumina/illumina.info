@@ -38,4 +38,4 @@ stylesheets[all][] = css/global.css
 ;; Scripts
 ;;;;;;;;;;;;;;;;;;;;;;
 
-scripts[] = js/script.js
+scripts[] = js/script.min.js

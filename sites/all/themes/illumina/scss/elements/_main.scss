@@ -18,8 +18,7 @@ body {
 // .main-container
 .main-container {
 	min-height:320px;
-	padding-bottom:0px;
-	margin-bottom: 334px;
+	padding-bottom:334px;
 	@media screen and (max-width: 768px) {margin-bottom:0px;}
 	.container {
 		position:relative;
@@ -76,11 +75,11 @@ body {
 // .wrapper
 .wrapper {
 	position: relative;
-	margin-bottom: 390px;
+	padding-bottom: 334px;
 	@media screen and (max-width: 992px) {
-		margin-bottom:inherit;
+		padding-bottom:inherit;
 	}
-	@media screen and  (max-width: 550px) {margin-bottom:0px;}
+	@media screen and  (max-width: 550px) {padding-bottom:0px;}
 	.container {
 		@media screen and (max-width: 767px) {
 			padding-left:0px;

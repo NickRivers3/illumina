@@ -11,6 +11,8 @@ module.exports = function(grunt) {
 					'libraries/bootstrap/js/bootstrap.js', // Bootstrap 
 					'libraries/bootstrap-accessibility/bootstrap-accessibility.min.js', // Bootstrap Accessibility
 					'libraries/skrollr-master/src/skrollr.js', // Skroll Master
+					'libraries/jquery-mousewheel/jquery.mousewheel.min.js', // Smooth Scroll
+					'libraries/simplr-smoothscroll/lib/jquery.simplr.smoothscroll.min.js', // Smooth Scroll
 					'js/dev.js'  // Main Script
 				],
 				dest: 'js/script.js',
